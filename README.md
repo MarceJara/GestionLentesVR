@@ -9,11 +9,11 @@ Sistema web tipo dashboard para la gestión integral de lentes de realidad virtu
 - Base de datos: SQL
 
 ## Estructura del Proyecto
-src/
-├── dominio/         # Entidades principales del sistema
-├── persistencia/    # Acceso a datos (DAO)
-├── logica/          # Lógica de negocio
-└── presentacion/    # Interfaces de usuario
+src/<br>
+├── dominio/         # Entidades principales del sistema<br>
+├── persistencia/    # Acceso a datos (DAO)<br>
+├── logica/          # Lógica de negocio<br>
+└── presentacion/    # Interfaces de usuario<br>
 
 ## Principales Funcionalidades
 - Gestión de dispositivos VR
