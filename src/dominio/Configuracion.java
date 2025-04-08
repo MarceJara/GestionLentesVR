@@ -1,69 +1,97 @@
-package dominio;
+package com.vregister.domain;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 
-// Clase Configuracion
+/**
+ * Clase que representa una configuración aplicable a un dispositivo VR
+ */
 public class Configuracion {
-    private int idConfig;
+    private int configuracionId;
     private String nombre;
+    private String descripcion;
+    private Date fechaCreacion;
+    private Usuario creadoPor;
+    private TipoConfiguracion tipo;
     private String valor;
-    private List<Opcion> opciones;
     
     public Configuracion() {
-        this.opciones = new ArrayList<>();
+        this.fechaCreacion = new Date();
     }
     
-    public Configuracion(int idConfig, String nombre, String valor) {
-        this.idConfig = idConfig;
+    public Configuracion(int configuracionId, String nombre, String descripcion, 
+                        Usuario creadoPor, TipoConfiguracion tipo, String valor) {
+        this();
+        this.configuracionId = configuracionId;
         this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.creadoPor = creadoPor;
+        this.tipo = tipo;
         this.valor = valor;
-        this.opciones = new ArrayList<>();
     }
-    
-    public int getIdConfig() {
-        return idConfig;
+
+    public int getConfiguracionId() {
+        return configuracionId;
     }
-    
-    public void setIdConfig(int idConfig) {
-        this.idConfig = idConfig;
+
+    public void setConfiguracionId(int configuracionId) {
+        this.configuracionId = configuracionId;
     }
-    
+
     public String getNombre() {
         return nombre;
     }
-    
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public Date getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public Usuario getCreadoPor() {
+        return creadoPor;
+    }
+
+    public void setCreadoPor(Usuario creadoPor) {
+        this.creadoPor = creadoPor;
+    }
+
+    public TipoConfiguracion getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoConfiguracion tipo) {
+        this.tipo = tipo;
+    }
+
     public String getValor() {
         return valor;
     }
-    
+
     public void setValor(String valor) {
         this.valor = valor;
     }
     
-    public List<Opcion> getOpciones() {
-        return opciones;
-    }
-    
-    public void setOpciones(List<Opcion> opciones) {
-        this.opciones = opciones;
-    }
-    
-    public void aplicar() {
-        // Aplicar la configuración
-    }
-    
-    public boolean modificarOpcionPorDefecto(int idOpcion, String nuevoValor) {
-        // Lógica para modificar opción por defecto
-        return true;
-    }
-    
-    public boolean agregarOpcion(Opcion opcion, int valorPorDefecto) {
-        // Lógica para agregar opción
-        return true;
+    @Override
+    public String toString() {
+        return "Configuracion{" +
+                "configuracionId=" + configuracionId +
+                ", nombre='" + nombre + '\'' +
+                ", tipo=" + tipo +
+                ", valor='" + valor + '\'' +
+                '}';
     }
 }

@@ -1,43 +1,53 @@
-package dominio;
+package com.vregister.domain;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Clase que representa un dispositivo VR en el sistema
+ */
 public class Dispositivo {
-    private int idDispositivo;
+    private int dispositivoId;
     private String nombre;
     private String modelo;
     private String numeroSerie;
-    private String estado; // activo, inactivo, mantenimiento
-    private String ubicacion;
     private Date fechaRegistro;
-    private Date ultimaConexion;
+    private String ubicacion;
+    private boolean activo;
+    private EstadoConexion estadoConexion;
     private int nivelBateria;
-    private int tiempoUso;
-    private int nivelBrillo;
-    private Usuario usuarioAsignado;
-    private Grupo grupo;
+    private Date ultimaConexion;
+    private Firmware firmwareActual;
     private List<Aplicacion> aplicacionesInstaladas;
-    private List<Firmware> firmwares;
-    private List<ConfiguracionAudio> configuracionesAudio;
-    private List<Log> logs;
-    private List<Etiqueta> etiquetas;
-
+    private List<Configuracion> configuraciones;
+    private Grupo grupo;
+    
     public Dispositivo() {
+        this.fechaRegistro = new Date();
+        this.activo = true;
+        this.estadoConexion = EstadoConexion.DESCONECTADO;
         this.aplicacionesInstaladas = new ArrayList<>();
-        this.firmwares = new ArrayList<>();
-        this.configuracionesAudio = new ArrayList<>();
-        this.logs = new ArrayList<>();
-        this.etiquetas = new ArrayList<>();
+        this.configuraciones = new ArrayList<>();
+    }
+    
+    public Dispositivo(int dispositivoId, String nombre, String modelo, String numeroSerie, 
+                       String ubicacion, Grupo grupo) {
+        this();
+        this.dispositivoId = dispositivoId;
+        this.nombre = nombre;
+        this.modelo = modelo;
+        this.numeroSerie = numeroSerie;
+        this.ubicacion = ubicacion;
+        this.grupo = grupo;
     }
 
-    public int getIdDispositivo() {
-        return idDispositivo;
+    public int getDispositivoId() {
+        return dispositivoId;
     }
 
-    public void setIdDispositivo(int idDispositivo) {
-        this.idDispositivo = idDispositivo;
+    public void setDispositivoId(int dispositivoId) {
+        this.dispositivoId = dispositivoId;
     }
 
     public String getNombre() {
@@ -64,12 +74,12 @@ public class Dispositivo {
         this.numeroSerie = numeroSerie;
     }
 
-    public String getEstado() {
-        return estado;
+    public Date getFechaRegistro() {
+        return fechaRegistro;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setFechaRegistro(Date fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
     }
 
     public String getUbicacion() {
@@ -80,20 +90,20 @@ public class Dispositivo {
         this.ubicacion = ubicacion;
     }
 
-    public Date getFechaRegistro() {
-        return fechaRegistro;
+    public boolean isActivo() {
+        return activo;
     }
 
-    public void setFechaRegistro(Date fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
 
-    public Date getUltimaConexion() {
-        return ultimaConexion;
+    public EstadoConexion getEstadoConexion() {
+        return estadoConexion;
     }
 
-    public void setUltimaConexion(Date ultimaConexion) {
-        this.ultimaConexion = ultimaConexion;
+    public void setEstadoConexion(EstadoConexion estadoConexion) {
+        this.estadoConexion = estadoConexion;
     }
 
     public int getNivelBateria() {
@@ -104,36 +114,20 @@ public class Dispositivo {
         this.nivelBateria = nivelBateria;
     }
 
-    public int getTiempoUso() {
-        return tiempoUso;
+    public Date getUltimaConexion() {
+        return ultimaConexion;
     }
 
-    public void setTiempoUso(int tiempoUso) {
-        this.tiempoUso = tiempoUso;
+    public void setUltimaConexion(Date ultimaConexion) {
+        this.ultimaConexion = ultimaConexion;
     }
 
-    public int getNivelBrillo() {
-        return nivelBrillo;
+    public Firmware getFirmwareActual() {
+        return firmwareActual;
     }
 
-    public void setNivelBrillo(int nivelBrillo) {
-        this.nivelBrillo = nivelBrillo;
-    }
-
-    public Usuario getUsuarioAsignado() {
-        return usuarioAsignado;
-    }
-
-    public void setUsuarioAsignado(Usuario usuarioAsignado) {
-        this.usuarioAsignado = usuarioAsignado;
-    }
-
-    public Grupo getGrupo() {
-        return grupo;
-    }
-
-    public void setGrupo(Grupo grupo) {
-        this.grupo = grupo;
+    public void setFirmwareActual(Firmware firmwareActual) {
+        this.firmwareActual = firmwareActual;
     }
 
     public List<Aplicacion> getAplicacionesInstaladas() {
@@ -144,73 +138,63 @@ public class Dispositivo {
         this.aplicacionesInstaladas = aplicacionesInstaladas;
     }
 
-    public List<Firmware> getFirmwares() {
-        return firmwares;
+    public List<Configuracion> getConfiguraciones() {
+        return configuraciones;
     }
 
-    public void setFirmwares(List<Firmware> firmwares) {
-        this.firmwares = firmwares;
+    public void setConfiguraciones(List<Configuracion> configuraciones) {
+        this.configuraciones = configuraciones;
     }
 
-    public List<ConfiguracionAudio> getConfiguracionesAudio() {
-        return configuracionesAudio;
+    public Grupo getGrupo() {
+        return grupo;
     }
 
-    public void setConfiguracionesAudio(List<ConfiguracionAudio> configuracionesAudio) {
-        this.configuracionesAudio = configuracionesAudio;
+    public void setGrupo(Grupo grupo) {
+        this.grupo = grupo;
     }
-
-    public List<Log> getLogs() {
-        return logs;
-    }
-
-    public void setLogs(List<Log> logs) {
-        this.logs = logs;
-    }
-
-    public List<Etiqueta> getEtiquetas() {
-        return etiquetas;
-    }
-
-    public void setEtiquetas(List<Etiqueta> etiquetas) {
-        this.etiquetas = etiquetas;
-    }
-
+    
     public void instalarAplicacion(Aplicacion aplicacion) {
-        // Método para instalar una aplicación en el dispositivo
+        this.aplicacionesInstaladas.add(aplicacion);
     }
-
+    
     public void desinstalarAplicacion(Aplicacion aplicacion) {
-        // Método para desinstalar una aplicación del dispositivo
+        this.aplicacionesInstaladas.remove(aplicacion);
     }
-
-    public void actualizarFirmware(Firmware firmware) {
-        // Método para actualizar el firmware del dispositivo
+    
+    public void actualizarFirmware(Firmware nuevoFirmware) {
+        this.firmwareActual = nuevoFirmware;
     }
-
-    public void cambiarEstado(String nuevoEstado) {
-        // Método para cambiar el estado del dispositivo
+    
+    public void agregarConfiguracion(Configuracion configuracion) {
+        this.configuraciones.add(configuracion);
     }
-
-    public void registrarLog(String accion, String descripcion) {
-        // Método para registrar un log en el dispositivo
+    
+    public boolean requiereActualizacionFirmware(Firmware firmwareDisponible) {
+        if (this.firmwareActual == null) return true;
+        return firmwareDisponible.getVersion().compareTo(this.firmwareActual.getVersion()) > 0;
     }
-
-    public void agregarEtiqueta(Etiqueta etiqueta) {
-        // Método para agregar una etiqueta al dispositivo
+    
+    public void conectar() {
+        this.estadoConexion = EstadoConexion.CONECTADO;
+        this.ultimaConexion = new Date();
     }
-
-    public void removerEtiqueta(Etiqueta etiqueta) {
-        // Método para remover una etiqueta del dispositivo
+    
+    public void desconectar() {
+        this.estadoConexion = EstadoConexion.DESCONECTADO;
     }
-
-    public boolean verificarActualizaciones() {
-        // Método para verificar si hay actualizaciones disponibles
-        return false;
-    }
-
-    public boolean verificarConexion() {
-        // Método para verificar si el dispositivo está conectado
-        return false;
+    
+    @Override
+    public String toString() {
+        return "Dispositivo{" +
+                "dispositivoId=" + dispositivoId +
+                ", nombre='" + nombre + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", numeroSerie='" + numeroSerie + '\'' +
+                ", ubicacion='" + ubicacion + '\'' +
+                ", estadoConexion=" + estadoConexion +
+                ", nivelBateria=" + nivelBateria + "%" +
+                ", grupo=" + (grupo != null ? grupo.getNombre() : "Sin grupo") +
+                '}';
     }
 }

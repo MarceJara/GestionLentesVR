@@ -1,30 +1,45 @@
-package dominio;
+package com.vregister.domain;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
+/**
+ * Clase que representa un firmware para dispositivos VR
+ */
 public class Firmware {
-    private int idFirmware;
+    private int firmwareId;
+    private String nombre;
     private String version;
     private Date fechaLanzamiento;
     private String descripcion;
     private String rutaArchivo;
-    private int tamaño;
-    private List<Dispositivo> dispositivosActualizados;
-    private List<String> modelosCompatibles;
-
+    
     public Firmware() {
-        this.dispositivosActualizados = new ArrayList<>();
-        this.modelosCompatibles = new ArrayList<>();
+    }
+    
+    public Firmware(int firmwareId, String nombre, String version, Date fechaLanzamiento, 
+                   String descripcion, String rutaArchivo) {
+        this.firmwareId = firmwareId;
+        this.nombre = nombre;
+        this.version = version;
+        this.fechaLanzamiento = fechaLanzamiento;
+        this.descripcion = descripcion;
+        this.rutaArchivo = rutaArchivo;
     }
 
-    public int getIdFirmware() {
-        return idFirmware;
+    public int getFirmwareId() {
+        return firmwareId;
     }
 
-    public void setIdFirmware(int idFirmware) {
-        this.idFirmware = idFirmware;
+    public void setFirmwareId(int firmwareId) {
+        this.firmwareId = firmwareId;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getVersion() {
@@ -58,50 +73,14 @@ public class Firmware {
     public void setRutaArchivo(String rutaArchivo) {
         this.rutaArchivo = rutaArchivo;
     }
-
-    public int getTamaño() {
-        return tamaño;
-    }
-
-    public void setTamaño(int tamaño) {
-        this.tamaño = tamaño;
-    }
-
-    public List<Dispositivo> getDispositivosActualizados() {
-        return dispositivosActualizados;
-    }
-
-    public void setDispositivosActualizados(List<Dispositivo> dispositivosActualizados) {
-        this.dispositivosActualizados = dispositivosActualizados;
-    }
-
-    public List<String> getModelosCompatibles() {
-        return modelosCompatibles;
-    }
-
-    public void setModelosCompatibles(List<String> modelosCompatibles) {
-        this.modelosCompatibles = modelosCompatibles;
-    }
-
-    public void agregarModeloCompatible(String modelo) {
-        // Método para agregar un modelo compatible con el firmware
-    }
-
-    public void removerModeloCompatible(String modelo) {
-        // Método para remover un modelo compatible con el firmware
-    }
-
-    public boolean esCompatibleCon(Dispositivo dispositivo) {
-        // Método para verificar si el firmware es compatible con un dispositivo
-        return false;
-    }
-
-    public void registrarActualizacion(Dispositivo dispositivo) {
-        // Método para registrar que un dispositivo ha sido actualizado con este firmware
-    }
-
-    public boolean esVersionPosteriorA(Firmware otroFirmware) {
-        // Método para verificar si este firmware es una versión posterior a otro
-        return false;
+    
+    @Override
+    public String toString() {
+        return "Firmware{" +
+                "firmwareId=" + firmwareId +
+                ", nombre='" + nombre + '\'' +
+                ", version='" + version + '\'' +
+                ", fechaLanzamiento=" + fechaLanzamiento +
+                '}';
     }
 }

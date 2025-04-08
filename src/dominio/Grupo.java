@@ -1,27 +1,41 @@
-package dominio;
+package com.vregister.domain;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Clase que representa un grupo o laboratorio de dispositivos VR
+ */
 public class Grupo {
-    private int idGrupo;
+    private int grupoId;
     private String nombre;
     private String descripcion;
     private Date fechaCreacion;
+    private String ubicacion;
     private Usuario responsable;
     private List<Dispositivo> dispositivos;
-
+    
     public Grupo() {
+        this.fechaCreacion = new Date();
         this.dispositivos = new ArrayList<>();
     }
-
-    public int getIdGrupo() {
-        return idGrupo;
+    
+    public Grupo(int grupoId, String nombre, String descripcion, String ubicacion, Usuario responsable) {
+        this();
+        this.grupoId = grupoId;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.ubicacion = ubicacion;
+        this.responsable = responsable;
     }
 
-    public void setIdGrupo(int idGrupo) {
-        this.idGrupo = idGrupo;
+    public int getGrupoId() {
+        return grupoId;
+    }
+
+    public void setGrupoId(int grupoId) {
+        this.grupoId = grupoId;
     }
 
     public String getNombre() {
@@ -48,6 +62,14 @@ public class Grupo {
         this.fechaCreacion = fechaCreacion;
     }
 
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+
     public Usuario getResponsable() {
         return responsable;
     }
@@ -63,26 +85,28 @@ public class Grupo {
     public void setDispositivos(List<Dispositivo> dispositivos) {
         this.dispositivos = dispositivos;
     }
-
+    
     public void agregarDispositivo(Dispositivo dispositivo) {
-        // Método para agregar un dispositivo al grupo
+        this.dispositivos.add(dispositivo);
+        dispositivo.setGrupo(this);
     }
-
-    public void removerDispositivo(Dispositivo dispositivo) {
-        // Método para remover un dispositivo del grupo
+    
+    public void eliminarDispositivo(Dispositivo dispositivo) {
+        this.dispositivos.remove(dispositivo);
+        dispositivo.setGrupo(null);
     }
-
-    public void cambiarResponsable(Usuario nuevoResponsable) {
-        // Método para cambiar el responsable del grupo
+    
+    public int cantidadDispositivos() {
+        return this.dispositivos.size();
     }
-
-    public int contarDispositivosActivos() {
-        // Método para contar los dispositivos activos del grupo
-        return 0;
-    }
-
-    public List<Dispositivo> listarDispositivosPorEstado(String estado) {
-        // Método para listar los dispositivos por estado
-        return new ArrayList<>();
+    
+    @Override
+    public String toString() {
+        return "Grupo{" +
+                "grupoId=" + grupoId +
+                ", nombre='" + nombre + '\'' +
+                ", ubicacion='" + ubicacion + '\'' +
+                ", cantidadDispositivos=" + cantidadDispositivos() +
+                '}';
     }
 }

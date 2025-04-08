@@ -1,31 +1,46 @@
-package dominio;
+package com.vregister.domain;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Clase que representa un usuario del sistema VRegister
+ */
 public class Usuario {
-    private int idUsuario;
+    private int usuarioId;
     private String nombre;
     private String apellido;
     private String correo;
-    private String contraseña;
-    private Date fechaRegistro;
-    private String rol; // admin, técnico, visor
-    private List<Dispositivo> dispositivosAsignados;
-    private List<Auditoria> auditorias;
+    private String contrasena;
+    private Date fechaCreacion;
+    private boolean activo;
+    private Rol rol;
+    private List<Actividad> actividades;
 
     public Usuario() {
-        this.dispositivosAsignados = new ArrayList<>();
-        this.auditorias = new ArrayList<>();
+        this.actividades = new ArrayList<>();
+        this.fechaCreacion = new Date();
+        this.activo = true;
     }
 
-    public int getIdUsuario() {
-        return idUsuario;
+    public Usuario(int usuarioId, String nombre, String apellido, String correo, 
+                   String contrasena, Rol rol) {
+        this();
+        this.usuarioId = usuarioId;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.contrasena = contrasena;
+        this.rol = rol;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public int getUsuarioId() {
+        return usuarioId;
+    }
+
+    public void setUsuarioId(int usuarioId) {
+        this.usuarioId = usuarioId;
     }
 
     public String getNombre() {
@@ -52,60 +67,63 @@ public class Usuario {
         this.correo = correo;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
-    public Date getFechaRegistro() {
-        return fechaRegistro;
+    public Date getFechaCreacion() {
+        return fechaCreacion;
     }
 
-    public void setFechaRegistro(Date fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
     }
 
-    public String getRol() {
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+
+    public Rol getRol() {
         return rol;
     }
 
-    public void setRol(String rol) {
+    public void setRol(Rol rol) {
         this.rol = rol;
     }
 
-    public List<Dispositivo> getDispositivosAsignados() {
-        return dispositivosAsignados;
+    public List<Actividad> getActividades() {
+        return actividades;
     }
 
-    public void setDispositivosAsignados(List<Dispositivo> dispositivosAsignados) {
-        this.dispositivosAsignados = dispositivosAsignados;
+    public void setActividades(List<Actividad> actividades) {
+        this.actividades = actividades;
     }
-
-    public List<Auditoria> getAuditorias() {
-        return auditorias;
+    
+    public void agregarActividad(Actividad actividad) {
+        this.actividades.add(actividad);
     }
-
-    public void setAuditorias(List<Auditoria> auditorias) {
-        this.auditorias = auditorias;
+    
+    public void cambiarContrasena(String nuevaContrasena) {
+        this.contrasena = nuevaContrasena;
     }
-
-    public void cambiarContraseña(String nuevaContraseña) {
-        // Método para cambiar la contraseña del usuario
-    }
-
-    public void asignarDispositivo(Dispositivo dispositivo) {
-        // Método para asignar un dispositivo al usuario
-    }
-
-    public void desasignarDispositivo(Dispositivo dispositivo) {
-        // Método para desasignar un dispositivo al usuario
-    }
-
-    public boolean validarCredenciales(String correo, String contraseña) {
-        // Método para validar las credenciales del usuario
-        return false;
+    
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "usuarioId=" + usuarioId +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", correo='" + correo + '\'' +
+                ", rol=" + rol +
+                ", activo=" + activo +
+                '}';
     }
 }
