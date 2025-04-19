@@ -1,44 +1,44 @@
 CREATE TABLE actividad (
-    actividadid               NUMBER NOT NULL,
+    actividadid               INTEGER NOT NULL,
     fechahora                 TIMESTAMP,
-    descripcion               VARCHAR2(254 CHAR),
-    detallestecnicos          VARCHAR2(254 CHAR),
-    usuario_usuarioid         NUMBER NOT NULL,
-    dispositivo_dispositivoid NUMBER NOT NULL,
-    dispositivo_grupoid       NUMBER NOT NULL
+    descripcion               VARCHAR(254 ),
+    detallestecnicos          VARCHAR(254 ),
+    usuario_usuarioid         INTEGER NOT NULL,
+    dispositivo_dispositivoid INTEGER NOT NULL,
+    dispositivo_grupo_grupoid INTEGER NOT NULL
 );
 
 ALTER TABLE actividad ADD CONSTRAINT actividad_pk PRIMARY KEY ( actividadid );
 
 CREATE TABLE aplicacion (
-    aplicacionid     NUMBER NOT NULL,
-    nombre           VARCHAR2(100 CHAR),
-    version          VARCHAR2(254 CHAR),
-    desarrollador    VARCHAR2(254 CHAR),
+    aplicacionid     INTEGER NOT NULL,
+    nombre           VARCHAR(100),
+    version          VARCHAR(254),
+    desarrollador    VARCHAR(254),
     fechalanzamiento TIMESTAMP,
-    descripcion      VARCHAR2(254 CHAR),
-    tamanomb         NUMBER(2, 10),
-    rutainstalador   VARCHAR2(254 CHAR)
+    descripcion      VARCHAR(254 ),
+    tamanomb         DOUBLE(10, 2),
+    rutainstalador   VARCHAR(254)
 );
 
 ALTER TABLE aplicacion ADD CONSTRAINT aplicacion_pk PRIMARY KEY ( aplicacionid );
 
 CREATE TABLE configuracion (
-    configuracionid   NUMBER NOT NULL,
-    nombre            VARCHAR2(254 CHAR),
-    descripcion       VARCHAR2(254 CHAR),
+    configuracionid   INTEGER NOT NULL,
+    nombre            VARCHAR(254),
+    descripcion       VARCHAR(254),
     fechacreacion     TIMESTAMP,
-    valor             VARCHAR2(254 CHAR),
-    usuario_usuarioid NUMBER NOT NULL
+    valor             VARCHAR(254),
+    usuario_usuarioid INTEGER NOT NULL
 );
 
 ALTER TABLE configuracion ADD CONSTRAINT configuracion_pk PRIMARY KEY ( configuracionid,
                                                                         usuario_usuarioid );
 
 CREATE TABLE disp_app (
-    dispositivo_dispositivoid NUMBER NOT NULL,
-    dispositivo_grupoid       NUMBER NOT NULL,
-    aplicacion_aplicacionid   NUMBER NOT NULL
+    dispositivo_dispositivoid INTEGER NOT NULL,
+    dispositivo_grupoid       INTEGER NOT NULL,
+    aplicacion_aplicacionid   INTEGER NOT NULL
 );
 
 ALTER TABLE disp_app
@@ -47,10 +47,10 @@ ALTER TABLE disp_app
                                              aplicacion_aplicacionid );
 
 CREATE TABLE disp_conf (
-    configuracion_configuracionid NUMBER NOT NULL,
-    configuracion_usuarioid       NUMBER NOT NULL,
-    dispositivo_dispositivoid     NUMBER NOT NULL,
-    dispositivo_grupoid           NUMBER NOT NULL
+    configuracion_configuracionid INTEGER NOT NULL,
+    configuracion_usuarioid       INTEGER NOT NULL,
+    dispositivo_dispositivoid     INTEGER NOT NULL,
+    dispositivo_grupoid           INTEGER NOT NULL
 );
 
 ALTER TABLE disp_conf
@@ -61,68 +61,68 @@ ALTER TABLE disp_conf
                       dispositivo_grupoid );
 
 CREATE TABLE dispositivo (
-    dispositivoid  NUMBER NOT NULL,
-    nombre         VARCHAR2(90 CHAR),
-    modelo         VARCHAR2(254 CHAR),
-    numeroserie    VARCHAR2(254 CHAR),
+    dispositivoid  INTEGER NOT NULL,
+    nombre         VARCHAR(90 ),
+    modelo         VARCHAR(254 ),
+    numeroserie    VARCHAR(254 ),
     fecharegistro  TIMESTAMP,
-    ubicacion      VARCHAR2(254 CHAR),
+    ubicacion      VARCHAR(254),
     activo         CHAR(1),
-    nivelbateria   NUMBER,
+    nivelbateria   INTEGER,
     ultimaconexion TIMESTAMP,
-    grupo_grupoid  NUMBER NOT NULL
+    grupo_grupoid  INTEGER NOT NULL
 );
 
 ALTER TABLE dispositivo ADD CONSTRAINT dispositivo_pk PRIMARY KEY ( dispositivoid,
                                                                     grupo_grupoid );
 
 CREATE TABLE firmware (
-    firmwareid                NUMBER NOT NULL,
-    nombre                    VARCHAR2(254 CHAR),
-    version                   VARCHAR2(254 CHAR),
+    firmwareid                INTEGER NOT NULL,
+    nombre                    VARCHAR(254 ),
+    version                   VARCHAR(254 ),
     fechalanzamiento          TIMESTAMP,
-    descripcion               VARCHAR2(254 CHAR),
-    rutaarchivo               VARCHAR2(254 BYTE),
-    dispositivo_dispositivoid NUMBER NOT NULL,
-    dispositivo_grupoid       NUMBER NOT NULL
+    descripcion               VARCHAR(254 ),
+    rutaarchivo               VARCHAR(254 ),
+    dispositivo_dispositivoid INTEGER NOT NULL,
+    dispositivo_grupo_grupoid INTEGER NOT NULL
 );
 
 CREATE UNIQUE INDEX firmware__idx ON
     firmware (
         dispositivo_dispositivoid
     ASC,
-        dispositivo_grupoid
+        dispositivo_grupo_grupoid
     ASC );
 
 ALTER TABLE firmware ADD CONSTRAINT firmware_pk PRIMARY KEY ( firmwareid );
 
 CREATE TABLE grupo (
-    grupoid       NUMBER NOT NULL,
-    nombre        VARCHAR2(80 CHAR),
-    descripcion   VARCHAR2(254 CHAR),
+    grupoid       INTEGER NOT NULL,
+    nombre        VARCHAR(80 ),
+    descripcion   VARCHAR(254 ),
     fechacreacion TIMESTAMP,
-    ubicacion     VARCHAR2(254 CHAR)
+    ubicacion     VARCHAR(254 )
 );
 
 ALTER TABLE grupo ADD CONSTRAINT grupo_pk PRIMARY KEY ( grupoid );
 
 CREATE TABLE metricauso (
-    metricaid           NUMBER NOT NULL,
+    metricaid           INTEGER NOT NULL,
     fecharegistro       TIMESTAMP,
-    tiempousominutos    NUMBER,
-    nivelbateriainicial NUMBER,
-    nivelbateriafinal   NUMBER,
-    usuario_usuarioid   NUMBER NOT NULL
+    tiempousominutos    INTEGER,
+    nivelbateriainicial INTEGER,
+    nivelbateriafinal   INTEGER,
+    usuario_usuarioid   INTEGER NOT NULL
 );
 
 ALTER TABLE metricauso ADD CONSTRAINT metricauso_pk PRIMARY KEY ( metricaid,
                                                                   usuario_usuarioid );
 
 CREATE TABLE rol (
-    rolid             NUMBER NOT NULL,
-    nombre            VARCHAR2(50 CHAR),
-    descripcion       VARCHAR2(254 CHAR),
-    usuario_usuarioid NUMBER NOT NULL
+    rolid             INTEGER NOT NULL,
+    nombre            VARCHAR(50 ),
+    descripcion       VARCHAR(254 ),
+    usuario_usuarioid INTEGER NOT NULL
 );
 
 CREATE UNIQUE INDEX rol__idx ON
@@ -133,11 +133,11 @@ CREATE UNIQUE INDEX rol__idx ON
 ALTER TABLE rol ADD CONSTRAINT rol_pk PRIMARY KEY ( rolid );
 
 CREATE TABLE usuario (
-    usuarioid     NUMBER NOT NULL,
-    nombre        VARCHAR2(50 CHAR),
-    apellido      VARCHAR2(50 CHAR),
-    correo        VARCHAR2(254 CHAR),
-    contrasena    VARCHAR2(254 CHAR),
+    usuarioid     INTEGER NOT NULL,
+    nombre        VARCHAR(50 ),
+    apellido      VARCHAR(50 ),
+    correo        VARCHAR(254 ),
+    contrasena    VARCHAR(254 ),
     fechacreacion TIMESTAMP,
     activo        CHAR(1)
 );
@@ -147,7 +147,7 @@ ALTER TABLE usuario ADD CONSTRAINT usuario_pk PRIMARY KEY ( usuarioid );
 ALTER TABLE actividad
     ADD CONSTRAINT actividad_dispositivo_fk
         FOREIGN KEY ( dispositivo_dispositivoid,
-                      dispositivo_grupoid )
+                      dispositivo_grupo_grupoid )
             REFERENCES dispositivo ( dispositivoid,
                                      grupo_grupoid );
 
@@ -191,7 +191,7 @@ ALTER TABLE dispositivo
 ALTER TABLE firmware
     ADD CONSTRAINT firmware_dispositivo_fk
         FOREIGN KEY ( dispositivo_dispositivoid,
-                      dispositivo_grupoid )
+                      dispositivo_grupo_grupoid )
             REFERENCES dispositivo ( dispositivoid,
                                      grupo_grupoid );
 
@@ -201,5 +201,4 @@ ALTER TABLE metricauso
 
 ALTER TABLE rol
     ADD CONSTRAINT rol_usuario_fk FOREIGN KEY ( usuario_usuarioid )
-        REFERENCES usuario ( usuarioid );
-
+        REFERENCES usuario ( usuarioid );
