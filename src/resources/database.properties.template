@@ -1,0 +1,7 @@
+# Database Configuration Template
+# Copy this file to database.properties and fill in your actual credentials
+# DO NOT commit database.properties to version control!
+
+db.url=jdbc:mysql://YOUR_AMAZON_RDS_ENDPOINT:3306/YOUR_DATABASE_NAME
+db.user=YOUR_USERNAME
+db.password=YOUR_PASSWORD

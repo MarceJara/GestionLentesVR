@@ -1,0 +1,22 @@
+# Database credentials
+src/resources/database.properties
+
+# Allow the template
+!src/resources/database.properties.template
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+
+# Compiled files
+target/
+out/
+*.class
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
