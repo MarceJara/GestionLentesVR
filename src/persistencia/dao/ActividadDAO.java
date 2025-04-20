@@ -103,6 +103,42 @@ public class ActividadDAO extends GenericDAO<Actividad> {
         executeUpdate(query, id);
     }
     
+    @Override
+    public int count() throws SQLException {
+        String query = "SELECT COUNT(*) FROM actividad";
+        Object result = executeScalar(query);
+        return result != null ? ((Number) result).intValue() : 0;
+    }
+    
+    @Override
+    public List<Actividad> getByPage(int page, int pageSize) throws SQLException {
+        String query = "SELECT * FROM actividad LIMIT ? OFFSET ?";
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        List<Actividad> actividades = new ArrayList<>();
+        
+        try {
+            stmt = connection.prepareStatement(query);
+            stmt.setInt(1, pageSize);
+            stmt.setInt(2, (page - 1) * pageSize);
+            rs = stmt.executeQuery();
+            
+            while (rs.next()) {
+                actividades.add(extractActividadFromResultSet(rs));
+            }
+            return actividades;
+        } finally {
+            closeResources(rs, stmt);
+        }
+    }
+    
+    @Override
+    public boolean exists(int id) throws SQLException {
+        String query = "SELECT COUNT(*) FROM actividad WHERE actividadid = ?";
+        Object result = executeScalar(query, id);
+        return result != null && ((Number) result).intValue() > 0;
+    }
+    
     // Métodos específicos de ActividadDAO
     public List<Actividad> getByUsuario(Usuario usuario) throws SQLException {
         String query = "SELECT * FROM actividad WHERE usuario_usuarioid = ?";
@@ -153,6 +189,27 @@ public class ActividadDAO extends GenericDAO<Actividad> {
         try {
             stmt = connection.prepareStatement(query);
             stmt.setString(1, tipo.toString());
+            rs = stmt.executeQuery();
+            
+            while (rs.next()) {
+                actividades.add(extractActividadFromResultSet(rs));
+            }
+            return actividades;
+        } finally {
+            closeResources(rs, stmt);
+        }
+    }
+    
+    public List<Actividad> getByDateRange(java.util.Date startDate, java.util.Date endDate) throws SQLException {
+        String query = "SELECT * FROM actividad WHERE fechahora BETWEEN ? AND ?";
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        List<Actividad> actividades = new ArrayList<>();
+        
+        try {
+            stmt = connection.prepareStatement(query);
+            stmt.setTimestamp(1, new Timestamp(startDate.getTime()));
+            stmt.setTimestamp(2, new Timestamp(endDate.getTime()));
             rs = stmt.executeQuery();
             
             while (rs.next()) {

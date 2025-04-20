@@ -17,11 +17,16 @@ public abstract class GenericDAO<T> {
     }
     
     // Métodos CRUD abstractos que deben ser implementados por las clases hijas
-    public abstract T get(int id) throws SQLException;
-    public abstract List<T> getAll() throws SQLException;
-    public abstract void save(T t) throws SQLException;
-    public abstract void update(T t) throws SQLException;
-    public abstract void delete(int id) throws SQLException;
+    public abstract T get(int id) throws SQLException; // Obtener por ID
+    public abstract List<T> getAll() throws SQLException; // Listar todos
+    public abstract void save(T t) throws SQLException; // Insertar
+    public abstract void update(T t) throws SQLException; // Modificar
+    public abstract void delete(int id) throws SQLException; // Eliminar
+    
+    // Métodos adicionales comunes que pueden ser útiles
+    public abstract int count() throws SQLException; // Contar registros
+    public abstract List<T> getByPage(int page, int pageSize) throws SQLException; // Paginación
+    public abstract boolean exists(int id) throws SQLException; // Verificar existencia
     
     // Método para ejecutar queries de consulta
     protected ResultSet executeQuery(String query, Object... params) throws SQLException {
@@ -50,6 +55,37 @@ public abstract class GenericDAO<T> {
         return -1;
     }
     
+    // Método para ejecutar queries que retornan un solo valor (COUNT, MAX, etc.)
+    protected Object executeScalar(String query, Object... params) throws SQLException {
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            stmt = connection.prepareStatement(query);
+            setParameters(stmt, params);
+            rs = stmt.executeQuery();
+            if (rs.next()) {
+                return rs.getObject(1);
+            }
+            return null;
+        } finally {
+            closeResources(rs, stmt);
+        }
+    }
+    
+    // Método para ejecutar transacciones
+    protected void executeTransaction(TransactionCallback callback) throws SQLException {
+        try {
+            connection.setAutoCommit(false);
+            callback.execute(connection);
+            connection.commit();
+        } catch (SQLException e) {
+            connection.rollback();
+            throw e;
+        } finally {
+            connection.setAutoCommit(true);
+        }
+    }
+    
     // Método auxiliar para establecer parámetros en PreparedStatement
     private void setParameters(PreparedStatement stmt, Object... params) throws SQLException {
         for (int i = 0; i < params.length; i++) {
@@ -63,6 +99,12 @@ public abstract class GenericDAO<T> {
                 stmt.setTimestamp(i + 1, (Timestamp) params[i]);
             } else if (params[i] instanceof java.util.Date) {
                 stmt.setTimestamp(i + 1, new Timestamp(((java.util.Date) params[i]).getTime()));
+            } else if (params[i] instanceof Boolean) {
+                stmt.setBoolean(i + 1, (Boolean) params[i]);
+            } else if (params[i] instanceof Float) {
+                stmt.setFloat(i + 1, (Float) params[i]);
+            } else if (params[i] instanceof Long) {
+                stmt.setLong(i + 1, (Long) params[i]);
             } else if (params[i] == null) {
                 stmt.setNull(i + 1, Types.NULL);
             }
@@ -77,5 +119,11 @@ public abstract class GenericDAO<T> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    
+    // Interface funcional para transacciones
+    @FunctionalInterface
+    protected interface TransactionCallback {
+        void execute(Connection connection) throws SQLException;
     }
 }
