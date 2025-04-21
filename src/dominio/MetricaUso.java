@@ -27,27 +27,9 @@ public class MetricaUso {
         this.dispositivo = dispositivo;
         this.tiempoUsoMinutos = tiempoUsoMinutos;
         this.aplicacionUsada = aplicacionUsada;
-    private int nivelBateriaInicial;
-    private int nivelBateriaFinal;
-    private Usuario usuario;
-    
-    public MetricaUso() {
-        this.fechaRegistro = new Date();
     }
     
-    public MetricaUso(int metricaId, Dispositivo dispositivo, int tiempoUsoMinutos, 
-                     Aplicacion aplicacionUsada, int nivelBateriaInicial, 
-                     int nivelBateriaFinal, Usuario usuario) {
-        this();
-        this.metricaId = metricaId;
-        this.dispositivo = dispositivo;
-        this.tiempoUsoMinutos = tiempoUsoMinutos;
-        this.aplicacionUsada = aplicacionUsada;
-        this.nivelBateriaInicial = nivelBateriaInicial;
-        this.nivelBateriaFinal = nivelBateriaFinal;
-        this.usuario = usuario;
-    }
-    
+  
     // Getters y Setters
     public int getMetricaId() {
         return metricaId;
