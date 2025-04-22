@@ -1,6 +1,6 @@
-package com.vregister.persistencia.dao;
+package com.pucp.persistencia.dao;
 
-import com.vregister.domain.Aplicacion;
+import com.pucp.aplicacion.Aplicacion;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -60,7 +60,7 @@ public class AplicacionDAO extends GenericDAO<Aplicacion> {
             aplicacion.getDesarrollador(),
             aplicacion.getFechaLanzamiento() != null ? new Timestamp(aplicacion.getFechaLanzamiento().getTime()) : null,
             aplicacion.getDescripcion(),
-            aplicacion.getTamanoMb(),
+            aplicacion.getTamanoMB(),
             aplicacion.getRutaInstalador()
         );
     }
@@ -77,7 +77,7 @@ public class AplicacionDAO extends GenericDAO<Aplicacion> {
             aplicacion.getDesarrollador(),
             aplicacion.getFechaLanzamiento() != null ? new Timestamp(aplicacion.getFechaLanzamiento().getTime()) : null,
             aplicacion.getDescripcion(),
-            aplicacion.getTamanoMb(),
+            aplicacion.getTamanoMB(),
             aplicacion.getRutaInstalador(),
             aplicacion.getAplicacionId()
         );
@@ -219,7 +219,7 @@ public class AplicacionDAO extends GenericDAO<Aplicacion> {
         }
         
         aplicacion.setDescripcion(rs.getString("descripcion"));
-        aplicacion.setTamanoMb(rs.getDouble("tamanomb"));
+        aplicacion.setTamanoMB(rs.getDouble("tamanomb"));
         aplicacion.setRutaInstalador(rs.getString("rutainstalador"));
         return aplicacion;
     }

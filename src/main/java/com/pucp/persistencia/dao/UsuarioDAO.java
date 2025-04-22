@@ -49,11 +49,14 @@ public class UsuarioDAO extends GenericDAO<Usuario> {
 
     @Override
     public void save(Usuario usuario) throws SQLException {
-        String query = "INSERT INTO usuario (usuarioid, nombre, correo) VALUES (?, ?, ?)";
+        String query = "INSERT INTO usuario (usuarioid, nombre, apellido, correo, contrasena, fechacreacion) VALUES (?, ?, ?, ?, ?, ?)";
         executeUpdate(query,
             usuario.getUsuarioId(),
             usuario.getNombre(),
-            usuario.getCorreo()
+            usuario.getApellido(),
+            usuario.getCorreo(),
+            usuario.getContrasena(),
+            usuario.getFechaCreacion()
         );
     }
 

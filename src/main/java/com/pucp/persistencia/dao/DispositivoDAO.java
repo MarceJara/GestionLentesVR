@@ -57,10 +57,13 @@ public class DispositivoDAO extends GenericDAO<Dispositivo> {
 
     @Override
     public void save(Dispositivo dispositivo) throws SQLException {
-        String query = "INSERT INTO dispositivo (dispositivoid, nombre, grupo_grupoid) VALUES (?, ?, ?)";
+        String query = "INSERT INTO dispositivo (dispositivoid, nombre, modelo, numeroserie, ubicacion, grupo_grupoid) VALUES (?, ?, ?, ?, ?, ?)";
         executeUpdate(query,
             dispositivo.getDispositivoId(),
             dispositivo.getNombre(),
+            dispositivo.getModelo(),
+            dispositivo.getNumeroSerie(),
+            dispositivo.getUbicacion(),
             dispositivo.getGrupo() != null ? dispositivo.getGrupo().getGrupoId() : null
         );
     }

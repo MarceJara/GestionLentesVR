@@ -54,8 +54,14 @@ public class GrupoDAO extends GenericDAO<Grupo> {
 
     @Override
     public void save(Grupo grupo) throws SQLException {
-        String query = "INSERT INTO grupo (grupoid, nombre) VALUES (?, ?)";
-        executeUpdate(query, grupo.getGrupoId(), grupo.getNombre());
+        String query = "INSERT INTO grupo (grupoid, nombre, descripcion, fechacreacion, ubicacion) VALUES (?, ?, ?, ?, ?)";
+        executeUpdate(query,
+            grupo.getGrupoId(),
+            grupo.getNombre(),
+            grupo.getDescripcion(),
+            grupo.getFechaCreacion(),
+            grupo.getUbicacion()
+            );
     }
 
     @Override

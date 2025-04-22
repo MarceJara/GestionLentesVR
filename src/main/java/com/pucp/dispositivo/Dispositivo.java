@@ -12,6 +12,7 @@ import java.util.List;
  */
 public class Dispositivo {
     private int dispositivoId;
+    private static int correlativo = 1;
     private String nombre;
     private String modelo;
     private String numeroSerie;
@@ -37,12 +38,13 @@ public class Dispositivo {
     public Dispositivo(int dispositivoId, String nombre, String modelo, String numeroSerie, 
                        String ubicacion, Grupo grupo) {
         this();
-        this.dispositivoId = dispositivoId;
+        dispositivoId = correlativo;
         this.nombre = nombre;
         this.modelo = modelo;
         this.numeroSerie = numeroSerie;
         this.ubicacion = ubicacion;
         this.grupo = grupo;
+        correlativo++;
     }
 
     public int getDispositivoId() {

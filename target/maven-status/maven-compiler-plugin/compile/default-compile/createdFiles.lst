@@ -19,3 +19,4 @@ com\pucp\actividad\TipoActividad.class
 com\pucp\persistencia\dao\UsuarioDAO.class
 com\pucp\dispositivo\MetricaUso.class
 com\pucp\usuario\Rol.class
+com\pucp\persistencia\dao\AplicacionDAO.class
