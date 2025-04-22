@@ -1,0 +1,13 @@
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE actividad;
+DROP TABLE aplicacion;
+DROP TABLE configuracion;
+DROP TABLE disp_app;
+DROP TABLE disp_conf;
+DROP TABLE dispositivo;
+DROP TABLE firmware;
+DROP TABLE grupo;
+DROP TABLE metricauso;
+DROP TABLE rol;
+DROP TABLE usuario;
+SET FOREIGN_KEY_CHECKS = 1;
