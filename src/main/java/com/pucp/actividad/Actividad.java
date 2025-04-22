@@ -19,8 +19,7 @@ public class Actividad {
         this.fechaHora = new Date();
     }
     
-    public Actividad(int actividadId, Usuario usuario, TipoActividad tipoActividad, 
-                    String descripcion, Dispositivo dispositivoAfectado) {
+    public Actividad(int actividadId, Usuario usuario, TipoActividad tipoActividad, String descripcion, Dispositivo dispositivoAfectado) {
         this();
         this.actividadId = actividadId;
         this.usuario = usuario;
