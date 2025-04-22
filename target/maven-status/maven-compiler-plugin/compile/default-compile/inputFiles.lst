@@ -1,14 +1,21 @@
-C:\Users\Administrador\Documents\Progra3\EjerciciosPractica\GestionVRAPP\src\main\java\com\pucp\dispositivo\Dispositivo.java
-C:\Users\Administrador\Documents\Progra3\EjerciciosPractica\GestionVRAPP\src\main\java\com\pucp\dispositivo\EstadoConexion.java
-C:\Users\Administrador\Documents\Progra3\EjerciciosPractica\GestionVRAPP\src\main\java\com\pucp\firmware\Firmware.java
-C:\Users\Administrador\Documents\Progra3\EjerciciosPractica\GestionVRAPP\src\main\java\com\pucp\actividad\TipoActividad.java
-C:\Users\Administrador\Documents\Progra3\EjerciciosPractica\GestionVRAPP\src\main\java\com\pucp\usuario\Grupo.java
-C:\Users\Administrador\Documents\Progra3\EjerciciosPractica\GestionVRAPP\src\main\java\com\pucp\dispositivo\Configuracion.java
-C:\Users\Administrador\Documents\Progra3\EjerciciosPractica\GestionVRAPP\src\main\java\com\pucp\aplicacion\Aplicacion.java
-C:\Users\Administrador\Documents\Progra3\EjerciciosPractica\GestionVRAPP\src\main\java\com\pucp\usuario\Usuario.java
-C:\Users\Administrador\Documents\Progra3\EjerciciosPractica\GestionVRAPP\src\main\java\com\pucp\aplicacion\CategoriaAplicacion.java
-C:\Users\Administrador\Documents\Progra3\EjerciciosPractica\GestionVRAPP\src\main\java\com\pucp\usuario\Rol.java
-C:\Users\Administrador\Documents\Progra3\EjerciciosPractica\GestionVRAPP\src\main\java\com\pucp\presentacion\GestionVRAPP.java
-C:\Users\Administrador\Documents\Progra3\EjerciciosPractica\GestionVRAPP\src\main\java\com\pucp\actividad\Actividad.java
-C:\Users\Administrador\Documents\Progra3\EjerciciosPractica\GestionVRAPP\src\main\java\com\pucp\dispositivo\TipoConfiguracion.java
-C:\Users\Administrador\Documents\Progra3\EjerciciosPractica\GestionVRAPP\src\main\java\com\pucp\dispositivo\MetricaUso.java
+C:\Users\itzer\Documents\PUCP 2025-I\Programación 3\TA2\GestionLentesVR-cristianBranch\src\main\java\com\pucp\actividad\Actividad.java
+C:\Users\itzer\Documents\PUCP 2025-I\Programación 3\TA2\GestionLentesVR-cristianBranch\src\main\java\com\pucp\actividad\TipoActividad.java
+C:\Users\itzer\Documents\PUCP 2025-I\Programación 3\TA2\GestionLentesVR-cristianBranch\src\main\java\com\pucp\aplicacion\Aplicacion.java
+C:\Users\itzer\Documents\PUCP 2025-I\Programación 3\TA2\GestionLentesVR-cristianBranch\src\main\java\com\pucp\aplicacion\CategoriaAplicacion.java
+C:\Users\itzer\Documents\PUCP 2025-I\Programación 3\TA2\GestionLentesVR-cristianBranch\src\main\java\com\pucp\dispositivo\Configuracion.java
+C:\Users\itzer\Documents\PUCP 2025-I\Programación 3\TA2\GestionLentesVR-cristianBranch\src\main\java\com\pucp\dispositivo\Dispositivo.java
+C:\Users\itzer\Documents\PUCP 2025-I\Programación 3\TA2\GestionLentesVR-cristianBranch\src\main\java\com\pucp\dispositivo\EstadoConexion.java
+C:\Users\itzer\Documents\PUCP 2025-I\Programación 3\TA2\GestionLentesVR-cristianBranch\src\main\java\com\pucp\dispositivo\MetricaUso.java
+C:\Users\itzer\Documents\PUCP 2025-I\Programación 3\TA2\GestionLentesVR-cristianBranch\src\main\java\com\pucp\dispositivo\TipoConfiguracion.java
+C:\Users\itzer\Documents\PUCP 2025-I\Programación 3\TA2\GestionLentesVR-cristianBranch\src\main\java\com\pucp\firmware\Firmware.java
+C:\Users\itzer\Documents\PUCP 2025-I\Programación 3\TA2\GestionLentesVR-cristianBranch\src\main\java\com\pucp\persistencia\conexion\DatabaseConnection.java
+C:\Users\itzer\Documents\PUCP 2025-I\Programación 3\TA2\GestionLentesVR-cristianBranch\src\main\java\com\pucp\persistencia\dao\ActividadDAO.java
+C:\Users\itzer\Documents\PUCP 2025-I\Programación 3\TA2\GestionLentesVR-cristianBranch\src\main\java\com\pucp\persistencia\dao\AplicacionDAO.java
+C:\Users\itzer\Documents\PUCP 2025-I\Programación 3\TA2\GestionLentesVR-cristianBranch\src\main\java\com\pucp\persistencia\dao\DispositivoDAO.java
+C:\Users\itzer\Documents\PUCP 2025-I\Programación 3\TA2\GestionLentesVR-cristianBranch\src\main\java\com\pucp\persistencia\dao\GenericDAO.java
+C:\Users\itzer\Documents\PUCP 2025-I\Programación 3\TA2\GestionLentesVR-cristianBranch\src\main\java\com\pucp\persistencia\dao\GrupoDAO.java
+C:\Users\itzer\Documents\PUCP 2025-I\Programación 3\TA2\GestionLentesVR-cristianBranch\src\main\java\com\pucp\persistencia\dao\UsuarioDAO.java
+C:\Users\itzer\Documents\PUCP 2025-I\Programación 3\TA2\GestionLentesVR-cristianBranch\src\main\java\com\pucp\presentacion\GestionVRAPP.java
+C:\Users\itzer\Documents\PUCP 2025-I\Programación 3\TA2\GestionLentesVR-cristianBranch\src\main\java\com\pucp\usuario\Grupo.java
+C:\Users\itzer\Documents\PUCP 2025-I\Programación 3\TA2\GestionLentesVR-cristianBranch\src\main\java\com\pucp\usuario\Rol.java
+C:\Users\itzer\Documents\PUCP 2025-I\Programación 3\TA2\GestionLentesVR-cristianBranch\src\main\java\com\pucp\usuario\Usuario.java
