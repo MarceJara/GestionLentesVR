@@ -71,15 +71,49 @@ public class GestionVRAPP {
             usuarioDAO.save(usuario1);
             System.out.println("Usuario " + usuario1.getNombre() + " agregado satisfactoriamente");
             
-
-            List<Aplicacion> aplicaciones = aplicacionDAO.getAll();
-            System.out.println("\nLista de aplicaciones:");
-            for (Aplicacion app : aplicaciones) {
-                System.out.println("- " + app.getNombre() + " (Versión: " + app.getVersion() + ")");
-            }
-
             int cantidadDispositivos = dispositivoDAO.count();
             System.out.println("\nCantidad total de dispositivos: " + cantidadDispositivos);
+            
+            GrupoDAO grupoDAOPruebaLectura = new GrupoDAO();
+            Grupo grupoPruebaLectura = grupoDAOPruebaLectura.get(1);
+            System.out.println("Grupo obtenido: " + (grupoPruebaLectura != null ? grupoPruebaLectura.getNombre() : "No encontrado"));
+
+            List<Grupo> gruposPruebaLectura = grupoDAOPruebaLectura.getAll();
+            System.out.println("\nLista de grupos:");
+            for (Grupo g : gruposPruebaLectura) {
+                System.out.println("- " + g.getNombre());
+            }
+
+            DispositivoDAO dispositivoDAOPruebaLectura = new DispositivoDAO();
+            Dispositivo dispositivoPruebaLectura = dispositivoDAOPruebaLectura.get(68);
+            System.out.println("\nDispositivo obtenido: " + (dispositivoPruebaLectura != null ? dispositivoPruebaLectura.getNombre() : "No encontrado"));
+
+            List<Dispositivo> dispositivosPruebaLectura = dispositivoDAOPruebaLectura.getAll();
+            System.out.println("\nLista de dispositivos:");
+            for (Dispositivo d : dispositivosPruebaLectura) {
+                System.out.println("- " + d.getNombre());
+            }
+
+            AplicacionDAO aplicacionDAOPruebaLectura = new AplicacionDAO();
+            Aplicacion aplicacion = aplicacionDAOPruebaLectura.get(100);
+            System.out.println("\nAplicación obtenida: " + (aplicacion != null ? aplicacion.getNombre() : "No encontrada"));
+
+            List<Aplicacion> aplicacionesPruebaLectura = aplicacionDAOPruebaLectura.getAll();
+            System.out.println("\nLista de aplicaciones:");
+            for (Aplicacion appPreubaLectura : aplicacionesPruebaLectura) {
+                System.out.println("- " + appPreubaLectura.getNombre() + " (Versión: " + appPreubaLectura.getVersion() + ")");
+            }
+
+            UsuarioDAO usuarioDAOPruebaLectura = new UsuarioDAO();
+            Usuario usuarioPruebaLectura = usuarioDAOPruebaLectura.get(1);
+            System.out.println("\nUsuario obtenido: " + (usuarioPruebaLectura != null ? usuarioPruebaLectura.getNombre() : "No encontrado"));
+
+            List<Usuario> usuariosPruebaLectura = usuarioDAOPruebaLectura.getAll();
+            System.out.println("\nLista de usuarios:");
+            for (Usuario u : usuariosPruebaLectura) {
+                System.out.println("- " + u.getNombre());
+            }
+
 
         } catch (SQLException e) {
             e.printStackTrace();
