@@ -74,6 +74,7 @@ public class GestionVRAPP {
             int cantidadDispositivos = dispositivoDAO.count();
             System.out.println("\nCantidad total de dispositivos: " + cantidadDispositivos);
             
+           //comienza la prueba del DAO de grupo
             GrupoDAO grupoDAOPruebaLectura = new GrupoDAO();
             Grupo grupoPruebaLectura = grupoDAOPruebaLectura.get(1);
             System.out.println("Grupo obtenido: " + (grupoPruebaLectura != null ? grupoPruebaLectura.getNombre() : "No encontrado"));
@@ -84,6 +85,7 @@ public class GestionVRAPP {
                 System.out.println("- " + g.getNombre());
             }
 
+            //COmienza la prueba del DAO del Dispositivo
             DispositivoDAO dispositivoDAOPruebaLectura = new DispositivoDAO();
             Dispositivo dispositivoPruebaLectura = dispositivoDAOPruebaLectura.get(68);
             System.out.println("\nDispositivo obtenido: " + (dispositivoPruebaLectura != null ? dispositivoPruebaLectura.getNombre() : "No encontrado"));
@@ -94,6 +96,7 @@ public class GestionVRAPP {
                 System.out.println("- " + d.getNombre());
             }
 
+            //comienza la prueba del DAO del aplicación
             AplicacionDAO aplicacionDAOPruebaLectura = new AplicacionDAO();
             Aplicacion aplicacion = aplicacionDAOPruebaLectura.get(100);
             System.out.println("\nAplicación obtenida: " + (aplicacion != null ? aplicacion.getNombre() : "No encontrada"));
@@ -104,6 +107,7 @@ public class GestionVRAPP {
                 System.out.println("- " + appPreubaLectura.getNombre() + " (Versión: " + appPreubaLectura.getVersion() + ")");
             }
 
+            //comeinza la prueba del DAO del usuario
             UsuarioDAO usuarioDAOPruebaLectura = new UsuarioDAO();
             Usuario usuarioPruebaLectura = usuarioDAOPruebaLectura.get(1);
             System.out.println("\nUsuario obtenido: " + (usuarioPruebaLectura != null ? usuarioPruebaLectura.getNombre() : "No encontrado"));
