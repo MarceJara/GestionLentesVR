@@ -13,7 +13,7 @@ import java.util.List;
 public class UpdateVRAPP {
     public static void main(String[] args) {
         try {
-            /*GrupoDAO grupoDAO = new GrupoDAO();
+            GrupoDAO grupoDAO = new GrupoDAO();
             Grupo grupo1 = grupoDAO.get(1);
             
             
@@ -37,7 +37,7 @@ public class UpdateVRAPP {
             aplicacionDAO.update(aplicacion1);
             System.out.println("Aplicación fue actualizada");
             
-            */
+
             UsuarioDAO usuarioDAO = new UsuarioDAO();
             Usuario usuario1 = usuarioDAO.get(1);
             usuario1.setApellido("Diaz");
