@@ -27,19 +27,19 @@ public class GestionVRAPP {
             DispositivoDAO dispositivoDAO = new DispositivoDAO();
             Dispositivo dispositivo1 = new Dispositivo();
             dispositivo1.setDispositivoId(68);
-            dispositivo1.setNombre("FabianDevice");
-            dispositivo1.setModelo("Oscar");
-            dispositivo1.setNumeroSerie("123456789");
-            dispositivo1.setUbicacion("Casa de Melgar");
+            dispositivo1.setNombre("Apple");
+            dispositivo1.setModelo("Oculus");
+            dispositivo1.setNumeroSerie("123456788");
+            dispositivo1.setUbicacion("Local1");
             dispositivo1.setGrupo(grupo1);
             Dispositivo dispositivo2 = new Dispositivo();
             dispositivo2.setDispositivoId(70);
-            dispositivo2.setNombre("Oscar");
-            dispositivo2.setModelo("XXULTRA");
+            dispositivo2.setNombre("META");
+            dispositivo2.setModelo("QUEST");
             dispositivo2.setNumeroSerie("123456789");
-            dispositivo2.setUbicacion("Casa de Paz");
+            dispositivo2.setUbicacion("Local2");
             dispositivo2.setGrupo(grupo1);
-
+            
             dispositivoDAO.save(dispositivo1);
             System.out.println("Dispositivo guardado: " + dispositivo1.getNombre());
             dispositivoDAO.save(dispositivo2);
