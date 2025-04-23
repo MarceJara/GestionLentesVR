@@ -1,3 +1,4 @@
+com\pucp\presentacion\UpdateVRAPP.class
 com\pucp\persistencia\conexion\DatabaseConnection.class
 com\pucp\persistencia\dao\GrupoDAO.class
 com\pucp\dispositivo\Configuracion.class

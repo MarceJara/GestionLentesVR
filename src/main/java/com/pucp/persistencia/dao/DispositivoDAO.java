@@ -70,9 +70,13 @@ public class DispositivoDAO extends GenericDAO<Dispositivo> {
 
     @Override
     public void update(Dispositivo dispositivo) throws SQLException {
-        String query = "UPDATE dispositivo SET nombre = ?, grupo_grupoid = ? WHERE dispositivoid = ?";
+        String query = "UPDATE dispositivo SET nombre = ?,modelo = ?, numeroserie = ?,"
+                + "ubicacion = ?, grupo_grupoid = ? WHERE dispositivoid = ?";
         executeUpdate(query,
             dispositivo.getNombre(),
+            dispositivo.getModelo(),
+            dispositivo.getNumeroSerie(),
+            dispositivo.getUbicacion(),
             dispositivo.getGrupo() != null ? dispositivo.getGrupo().getGrupoId() : null,
             dispositivo.getDispositivoId()
         );
@@ -124,7 +128,10 @@ public class DispositivoDAO extends GenericDAO<Dispositivo> {
         Dispositivo dispositivo = new Dispositivo();
         dispositivo.setDispositivoId(rs.getInt("dispositivoid"));
         dispositivo.setNombre(rs.getString("nombre"));
-
+        dispositivo.setModelo(rs.getString("modelo"));
+        dispositivo.setNumeroSerie(rs.getString("numeroserie"));
+        dispositivo.setFechaRegistro(rs.getDate("fecharegistro"));
+        dispositivo.setUbicacion(rs.getString("ubicacion"));
         int grupoId = rs.getInt("grupo_grupoid");
         if (!rs.wasNull()) {
             Grupo grupo = grupoDAO.get(grupoId);
