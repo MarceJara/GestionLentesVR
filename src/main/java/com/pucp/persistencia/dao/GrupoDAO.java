@@ -66,8 +66,8 @@ public class GrupoDAO extends GenericDAO<Grupo> {
 
     @Override
     public void update(Grupo grupo) throws SQLException {
-        String query = "UPDATE grupo SET nombre = ? WHERE grupoid = ?";
-        executeUpdate(query, grupo.getNombre(), grupo.getGrupoId());
+        String query = "UPDATE grupo SET nombre = ?, descripcion = ? WHERE grupoid = ?";
+        executeUpdate(query, grupo.getNombre(),grupo.getDescripcion(), grupo.getGrupoId());
     }
 
     @Override

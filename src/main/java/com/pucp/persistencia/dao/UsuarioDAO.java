@@ -62,10 +62,12 @@ public class UsuarioDAO extends GenericDAO<Usuario> {
 
     @Override
     public void update(Usuario usuario) throws SQLException {
-        String query = "UPDATE usuario SET nombre = ?, correo = ? WHERE usuarioid = ?";
+        String query = "UPDATE usuario SET nombre = ?, apellido = ?,correo = ? ,contrasena = ? WHERE usuarioid = ?";
         executeUpdate(query,
             usuario.getNombre(),
+            usuario.getApellido(),
             usuario.getCorreo(),
+            usuario.getContrasena(),
             usuario.getUsuarioId()
         );
     }
@@ -116,7 +118,9 @@ public class UsuarioDAO extends GenericDAO<Usuario> {
         Usuario usuario = new Usuario();
         usuario.setUsuarioId(rs.getInt("usuarioid"));
         usuario.setNombre(rs.getString("nombre"));
+        usuario.setApellido(rs.getString("apellido"));
         usuario.setCorreo(rs.getString("correo"));
+        usuario.setContrasena(rs.getString("contrasena"));
         return usuario;
     }
 }
