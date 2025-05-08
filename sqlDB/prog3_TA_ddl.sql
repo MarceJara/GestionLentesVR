@@ -5,7 +5,8 @@ CREATE TABLE actividad (
     detallestecnicos          VARCHAR(254 ),
     usuario_usuarioid         INTEGER NOT NULL,
     dispositivo_dispositivoid INTEGER NOT NULL,
-    dispositivo_grupo_grupoid INTEGER NOT NULL
+    dispositivo_grupo_grupoid INTEGER NOT NULL,
+    activo			          CHAR(1)
 );
 
 ALTER TABLE actividad ADD CONSTRAINT actividad_pk PRIMARY KEY ( actividadid );
@@ -18,7 +19,8 @@ CREATE TABLE aplicacion (
     fechalanzamiento TIMESTAMP,
     descripcion      VARCHAR(254 ),
     tamanomb         DOUBLE(10, 2),
-    rutainstalador   VARCHAR(254)
+    rutainstalador   VARCHAR(254),
+    activo			 CHAR(1)
 );
 
 ALTER TABLE aplicacion ADD CONSTRAINT aplicacion_pk PRIMARY KEY ( aplicacionid );
@@ -29,7 +31,8 @@ CREATE TABLE configuracion (
     descripcion       VARCHAR(254),
     fechacreacion     TIMESTAMP,
     valor             VARCHAR(254),
-    usuario_usuarioid INTEGER NOT NULL
+    usuario_usuarioid INTEGER NOT NULL,
+    activo			  CHAR(1)
 );
 
 ALTER TABLE configuracion ADD CONSTRAINT configuracion_pk PRIMARY KEY ( configuracionid,
@@ -84,7 +87,8 @@ CREATE TABLE firmware (
     descripcion               VARCHAR(254 ),
     rutaarchivo               VARCHAR(254 ),
     dispositivo_dispositivoid INTEGER NOT NULL,
-    dispositivo_grupo_grupoid INTEGER NOT NULL
+    dispositivo_grupo_grupoid INTEGER NOT NULL,
+    activo			          CHAR(1)
 );
 
 CREATE UNIQUE INDEX firmware__idx ON
@@ -101,7 +105,8 @@ CREATE TABLE grupo (
     nombre        VARCHAR(80 ),
     descripcion   VARCHAR(254 ),
     fechacreacion TIMESTAMP,
-    ubicacion     VARCHAR(254 )
+    ubicacion     VARCHAR(254 ),
+    activo		  CHAR(1)
 );
 
 ALTER TABLE grupo ADD CONSTRAINT grupo_pk PRIMARY KEY ( grupoid );
@@ -112,7 +117,8 @@ CREATE TABLE metricauso (
     tiempousominutos    INTEGER,
     nivelbateriainicial INTEGER,
     nivelbateriafinal   INTEGER,
-    usuario_usuarioid   INTEGER NOT NULL
+    usuario_usuarioid   INTEGER NOT NULL,
+    activo			    CHAR(1)
 );
 
 ALTER TABLE metricauso ADD CONSTRAINT metricauso_pk PRIMARY KEY ( metricaid,
@@ -122,7 +128,8 @@ CREATE TABLE rol (
     rolid             INTEGER NOT NULL,
     nombre            VARCHAR(50 ),
     descripcion       VARCHAR(254 ),
-    usuario_usuarioid INTEGER NOT NULL
+    usuario_usuarioid INTEGER NOT NULL,
+    activo			  CHAR(1)
 );
 
 CREATE UNIQUE INDEX rol__idx ON
