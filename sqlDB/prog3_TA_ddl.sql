@@ -208,4 +208,4 @@ ALTER TABLE metricauso
 
 ALTER TABLE rol
     ADD CONSTRAINT rol_usuario_fk FOREIGN KEY ( usuario_usuarioid )
-        REFERENCES usuario ( usuarioid );
+        REFERENCES usuario ( usuarioid );
