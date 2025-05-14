@@ -13,13 +13,14 @@ public class Configuracion {
     private Usuario creadoPor;
     private TipoConfiguracion tipo;
     private String valor;
+    private boolean activo;
     
     public Configuracion() {
         this.fechaCreacion = new Date();
     }
     
     public Configuracion(int configuracionId, String nombre, String descripcion, 
-                        Usuario creadoPor, TipoConfiguracion tipo, String valor) {
+                        Usuario creadoPor, TipoConfiguracion tipo, String valor, boolean activo) {
         this();
         this.configuracionId = configuracionId;
         this.nombre = nombre;
@@ -27,6 +28,7 @@ public class Configuracion {
         this.creadoPor = creadoPor;
         this.tipo = tipo;
         this.valor = valor;
+        this.activo = activo;
     }
 
     public int getConfiguracionId() {
@@ -93,5 +95,13 @@ public class Configuracion {
                 ", tipo=" + tipo +
                 ", valor='" + valor + '\'' +
                 '}';
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+    
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
 }
