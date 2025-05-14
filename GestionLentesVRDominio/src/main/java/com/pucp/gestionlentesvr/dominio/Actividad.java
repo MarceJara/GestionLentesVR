@@ -13,19 +13,21 @@ public class Actividad {
     private String descripcion;
     private String detallesTecnicos;
     private Dispositivo dispositivoAfectado;
+    private boolean activo;
     
     public Actividad() {
         this.fechaHora = new Date();
     }
     
     public Actividad(int actividadId, Usuario usuario, TipoActividad tipoActividad, 
-                    String descripcion, Dispositivo dispositivoAfectado) {
+                    String descripcion, Dispositivo dispositivoAfectado, boolean activo) {
         this();
         this.actividadId = actividadId;
         this.usuario = usuario;
         this.tipoActividad = tipoActividad;
         this.descripcion = descripcion;
         this.dispositivoAfectado = dispositivoAfectado;
+        this.activo = activo;
     }
 
     public int getActividadId() {
@@ -84,6 +86,13 @@ public class Actividad {
         this.dispositivoAfectado = dispositivoAfectado;
     }
     
+    public boolean isActivo() {
+        return activo;
+    }
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }    
+    
     @Override
     public String toString() {
         return "Actividad{" +
@@ -94,4 +103,6 @@ public class Actividad {
                 ", descripcion='" + descripcion + '\'' +
                 '}';
     }
+
+
 }

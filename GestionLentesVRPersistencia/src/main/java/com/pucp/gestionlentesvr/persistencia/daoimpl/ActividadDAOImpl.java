@@ -12,37 +12,82 @@ public class ActividadDAOImpl extends BaseDAOImpl<Actividad> implements Activida
 
     @Override
     protected PreparedStatement getInsertPS(Connection conn, Actividad entity) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String query = "{CALL insertar_actividad(?, ?, ?, ?, ?, ?, ?, ?)}";
+        PreparedStatement cs = conn.prepareStatement(query);
+        cs.setInt(1, entity.getActividadId());
+        cs.setDate(2, new java.sql.Date(entity.getFechaHora().getTime()));
+        cs.setString(3, entity.getDescripcion());
+        cs.setString(4, entity.getDetallesTecnicos());
+        cs.setInt(5, entity.getUsuario().getUsuarioId());
+        cs.setInt(6, entity.getDispositivoAfectado().getDispositivoId());
+        cs.setInt(7, entity.getDispositivoAfectado().getGrupo().getGrupoId()); // Asumiendo que Dispositivo tiene un método getId()
+        cs.setString(8, "S");
+        return cs;
     }
 
     @Override
     protected PreparedStatement getUpdatePS(Connection conn, Actividad entity) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String query = "{CALL actualizar_actividad(?, ?, ?, ?, ?, ?, ?, ?)}";
+        PreparedStatement cs = conn.prepareStatement(query);
+        cs.setInt(1, entity.getActividadId());
+        cs.setDate(2, new java.sql.Date(entity.getFechaHora().getTime()));
+        cs.setString(3, entity.getDescripcion());
+        cs.setString(4, entity.getDetallesTecnicos());
+        cs.setInt(5, entity.getUsuario().getUsuarioId());
+        cs.setInt(6, entity.getDispositivoAfectado().getDispositivoId());
+        cs.setInt(7, entity.getDispositivoAfectado().getGrupo().getGrupoId()); // Asumiendo que Dispositivo tiene un método getId()
+        if(entity.isActivo()){
+            cs.setString(8, "S");
+        }else{
+            cs.setString(8, "N");
+        }
+        return cs;
     }
 
     @Override
     protected PreparedStatement getDeletePS(Connection conn, Integer id) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String query = "{CALL eliminar_actividad(?)}";
+        PreparedStatement cs = conn.prepareStatement(query);
+        cs.setInt(1, id);
+        return cs;
     }
 
     @Override
     protected PreparedStatement getSelectByIdPS(Connection conn, Integer id) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String query = "{CALL obtener_actividad(?)}";
+        PreparedStatement cs = conn.prepareStatement(query);
+        cs.setInt(1, id);
+        return cs; 
     }
 
     @Override
     protected PreparedStatement getSelectAllPS(Connection conn) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String query = "{CALL listar_actividad()}";
+        PreparedStatement cs = conn.prepareStatement(query);
+        return cs;  
     }
 
     @Override
     protected Actividad createFromResultSet(ResultSet rs) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Actividad act = new Actividad();
+        act.setActividadId(rs.getInt("actividadid"));
+        act.setFechaHora(rs.getDate("fechahora"));
+        act.setDescripcion(rs.getString("descripcion"));
+        act.setDetallesTecnicos(rs.getString("detallestecnicos"));
+        act.getUsuario().setUsuarioId(rs.getInt("usuario_usuarioid"));
+        act.getDispositivoAfectado().setDispositivoId(rs.getInt("dispositivo_dispositivoid"));
+        act.getDispositivoAfectado().getGrupo().setGrupoId(rs.getInt("dispositivo_grupo_grupoid"));
+        if(rs.getString("activo").compareTo("S")==0){
+            act.setActivo(true);
+        }else{
+            act.setActivo(false);
+        }
+        return act;
     }
 
     @Override
     protected void setId(Actividad entity, Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        entity.setActividadId(id);
     }
     
 }

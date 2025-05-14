@@ -15,13 +15,14 @@ public class Aplicacion {
     private CategoriaAplicacion categoria;
     private double tamanoMB;
     private String rutaInstalador;
+    private boolean activo;
     
     public Aplicacion() {
     }
     
     public Aplicacion(int aplicacionId, String nombre, String version, String desarrollador, 
                      Date fechaLanzamiento, String descripcion, CategoriaAplicacion categoria, 
-                     double tamanoMB, String rutaInstalador) {
+                     double tamanoMB, String rutaInstalador, boolean activo) {
         this.aplicacionId = aplicacionId;
         this.nombre = nombre;
         this.version = version;
@@ -31,6 +32,7 @@ public class Aplicacion {
         this.categoria = categoria;
         this.tamanoMB = tamanoMB;
         this.rutaInstalador = rutaInstalador;
+        this.activo = activo;
     }
 
     public int getAplicacionId() {
@@ -116,4 +118,12 @@ public class Aplicacion {
                 ", tamaño=" + tamanoMB + " MB" +
                 '}';
     }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }   
 }
