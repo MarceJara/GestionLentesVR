@@ -1,6 +1,7 @@
 C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\GestionLentesVR\GestionLentesVRPersistencia\src\main\java\com\pucp\gestionlentesvr\persistencia\daoimpl\AplicacionDAOImpl.java
 C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\GestionLentesVR\GestionLentesVRPersistencia\src\main\java\com\pucp\gestionlentesvr\persistencia\daoimpl\UsuarioDAOImpl.java
 C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\GestionLentesVR\GestionLentesVRPersistencia\src\main\java\com\pucp\gestionlentesvr\persistencia\BaseDAO.java
+C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\GestionLentesVR\GestionLentesVRPersistencia\src\main\java\com\pucp\gestionlentesvr\persistencia\dao\MetricaUsoDAO.java
 C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\GestionLentesVR\GestionLentesVRPersistencia\src\main\java\com\pucp\gestionlentesvr\persistencia\daoimpl\ActividadDAOImpl.java
 C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\GestionLentesVR\GestionLentesVRPersistencia\src\main\java\com\pucp\gestionlentesvr\persistencia\dao\UsuarioDAO.java
 C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\GestionLentesVR\GestionLentesVRPersistencia\src\main\java\com\pucp\gestionlentesvr\persistencia\dao\ActividadDAO.java
@@ -11,6 +12,7 @@ C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\GestionLentesVR\GestionLentesVRP
 C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\GestionLentesVR\GestionLentesVRPersistencia\src\main\java\com\pucp\gestionlentesvr\persistencia\dao\RolDAO.java
 C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\GestionLentesVR\GestionLentesVRPersistencia\src\main\java\com\pucp\gestionlentesvr\persistencia\daoimpl\ConfiguracionDAOImpl.java
 C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\GestionLentesVR\GestionLentesVRPersistencia\src\main\java\com\pucp\gestionlentesvr\persistencia\daoimpl\DispositivoDAOImpl.java
+C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\GestionLentesVR\GestionLentesVRPersistencia\src\main\java\com\pucp\gestionlentesvr\persistencia\daoimpl\MetricaUsoDAOImpl.java
 C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\GestionLentesVR\GestionLentesVRPersistencia\src\main\java\com\pucp\gestionlentesvr\persistencia\dao\DispositivoDAO.java
 C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\GestionLentesVR\GestionLentesVRPersistencia\src\main\java\com\pucp\gestionlentesvr\persistencia\DBManager.java
 C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\GestionLentesVR\GestionLentesVRPersistencia\src\main\java\com\pucp\gestionlentesvr\persistencia\daoimpl\FirmwareDAOImpl.java

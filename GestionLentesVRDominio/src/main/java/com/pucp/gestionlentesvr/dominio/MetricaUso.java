@@ -14,9 +14,11 @@ public class MetricaUso {
     private int nivelBateriaInicial;
     private int nivelBateriaFinal;
     private Usuario usuario;
+    private boolean activo;
     
     public MetricaUso() {
         this.fechaRegistro = new Date();
+        this.usuario = new Usuario();
     }
     
     public MetricaUso(int metricaId, Dispositivo dispositivo, int tiempoUsoMinutos, 
@@ -37,6 +39,14 @@ public class MetricaUso {
     
     public void setMetricaId(int metricaId) {
         this.metricaId = metricaId;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
     
     public Dispositivo getDispositivo() {

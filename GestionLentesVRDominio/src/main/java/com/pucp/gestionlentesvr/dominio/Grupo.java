@@ -15,6 +15,7 @@ public class Grupo {
     private String ubicacion;
     private Usuario responsable;
     private List<Dispositivo> dispositivos;
+    private boolean activo;
     
     public Grupo() {
         this.fechaCreacion = new Date();
@@ -98,6 +99,14 @@ public class Grupo {
     
     public int cantidadDispositivos() {
         return this.dispositivos.size();
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
     
     @Override

@@ -12,37 +12,85 @@ public class FirmwareDAOImpl extends BaseDAOImpl<Firmware> implements FirmwareDA
 
     @Override
     protected PreparedStatement getInsertPS(Connection conn, Firmware entity) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String query = "{CALL insertar_firmware(?, ?, ?, ?,?, ?, ?, ?,?)}";
+        PreparedStatement cs = conn.prepareStatement(query);
+        cs.setInt(1, entity.getFirmwareId());
+        cs.setString(2, entity.getNombre());
+        cs.setString(3, entity.getVersion());
+        cs.setDate(4, new java.sql.Date(entity.getFechaLanzamiento().getTime()));
+        cs.setString(5, entity.getDescripcion());
+        cs.setString(6, entity.getRutaArchivo());
+        cs.setInt(7, entity.getDispositivo().getDispositivoId()); 
+        cs.setInt(8, entity.getGrupo().getGrupoId()); 
+        cs.setString(7, "S");
+        return cs;
     }
 
     @Override
     protected PreparedStatement getUpdatePS(Connection conn, Firmware entity) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       String query = "{CALL actualizar_firmware(?, ?, ?, ?,?, ?, ?, ?,?)}";
+        PreparedStatement cs = conn.prepareStatement(query);
+        cs.setInt(1, entity.getFirmwareId());
+        cs.setString(2, entity.getNombre());
+        cs.setString(3, entity.getVersion());
+        cs.setDate(4, new java.sql.Date(entity.getFechaLanzamiento().getTime()));
+        cs.setString(5, entity.getDescripcion());
+        cs.setString(6, entity.getRutaArchivo());
+        cs.setInt(7, entity.getDispositivo().getDispositivoId());
+        cs.setInt(8, entity.getGrupo().getGrupoId()); 
+        if(entity.isActivo()){
+            cs.setString(9, "S");
+        }else{
+            cs.setString(9, "N");
+        }
+        return cs;
     }
 
     @Override
     protected PreparedStatement getDeletePS(Connection conn, Integer id) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String query = "{CALL eliminar_firmware(?)}";
+        PreparedStatement cs = conn.prepareStatement(query);
+        cs.setInt(1, id);
+        return cs;
     }
 
     @Override
     protected PreparedStatement getSelectByIdPS(Connection conn, Integer id) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String query = "{CALL obtener_firmware(?)}";
+        PreparedStatement cs = conn.prepareStatement(query);
+        cs.setInt(1, id);
+        return cs; 
     }
 
     @Override
     protected PreparedStatement getSelectAllPS(Connection conn) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String query = "{CALL listar_firmware()}";
+        PreparedStatement cs = conn.prepareStatement(query);
+        return cs;  
     }
 
     @Override
     protected Firmware createFromResultSet(ResultSet rs) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Firmware firm = new Firmware();
+        firm.setFirmwareId(rs.getInt("firmwareid"));
+        firm.setNombre(rs.getString("nombre"));
+        firm.setVersion(rs.getString("version"));
+        firm.setFechaLanzamiento(rs.getTimestamp("fechalanzamiento"));
+        firm.setDescripcion(rs.getString("descripcion"));
+        firm.setRutaArchivo(rs.getString("rutaarchivo"));
+        firm.getDispositivo().setDispositivoId(rs.getInt("dispositivo_dispositivoid"));
+        firm.getGrupo().setGrupoId(rs.getInt("dispositivo_grupo_grupoid"));
+        if(rs.getString("activo").compareTo("S")==0){
+            firm.setActivo(true);
+        }else{
+            firm.setActivo(false);
+        }
+        return firm;
     }
-
+    
     @Override
     protected void setId(Firmware entity, Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        entity.setFirmwareId(id);
     }
     
 }

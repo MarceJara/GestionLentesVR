@@ -12,18 +12,25 @@ public class Firmware {
     private Date fechaLanzamiento;
     private String descripcion;
     private String rutaArchivo;
+    private Dispositivo dispositivo;
+    private Grupo grupo;
+    private boolean activo;
     
     public Firmware() {
+        this.dispositivo= new Dispositivo();
+        this.grupo= new Grupo();
     }
     
     public Firmware(int firmwareId, String nombre, String version, Date fechaLanzamiento, 
-                   String descripcion, String rutaArchivo) {
+                   String descripcion, String rutaArchivo,Dispositivo dispositivo,Grupo grupo) {
         this.firmwareId = firmwareId;
         this.nombre = nombre;
         this.version = version;
         this.fechaLanzamiento = fechaLanzamiento;
         this.descripcion = descripcion;
         this.rutaArchivo = rutaArchivo;
+        this.dispositivo.setDispositivoId(dispositivo.getDispositivoId());
+        this.grupo.setGrupoId(grupo.getGrupoId());
     }
 
     public int getFirmwareId() {
@@ -72,6 +79,30 @@ public class Firmware {
 
     public void setRutaArchivo(String rutaArchivo) {
         this.rutaArchivo = rutaArchivo;
+    }
+
+    public Dispositivo getDispositivo() {
+        return dispositivo;
+    }
+
+    public void setDispositivo(Dispositivo dispositivo) {
+        this.dispositivo = dispositivo;
+    }
+
+    public Grupo getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(Grupo grupo) {
+        this.grupo = grupo;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
     
     @Override
