@@ -128,14 +128,8 @@ CREATE TABLE rol (
     rolid             INTEGER NOT NULL,
     nombre            VARCHAR(50 ),
     descripcion       VARCHAR(254 ),
-    usuario_usuarioid INTEGER NOT NULL,
     activo			  CHAR(1)
 );
-
-CREATE UNIQUE INDEX rol__idx ON
-    rol (
-        usuario_usuarioid
-    ASC );
 
 ALTER TABLE rol ADD CONSTRAINT rol_pk PRIMARY KEY ( rolid );
 
@@ -146,10 +140,12 @@ CREATE TABLE usuario (
     correo        VARCHAR(254 ),
     contrasena    VARCHAR(254 ),
     fechacreacion TIMESTAMP,
+	rol_rolid INTEGER NOT NULL,
     activo        CHAR(1)
 );
 
 ALTER TABLE usuario ADD CONSTRAINT usuario_pk PRIMARY KEY ( usuarioid );
+ALTER TABLE usuario ADD CONSTRAINT usuario_rol_fk FOREIGN KEY ( rol_rolid ) REFERENCES rol (rolid);
 
 ALTER TABLE actividad
     ADD CONSTRAINT actividad_dispositivo_fk
@@ -204,8 +200,4 @@ ALTER TABLE firmware
 
 ALTER TABLE metricauso
     ADD CONSTRAINT metricauso_usuario_fk FOREIGN KEY ( usuario_usuarioid )
-        REFERENCES usuario ( usuarioid );
-
-ALTER TABLE rol
-    ADD CONSTRAINT rol_usuario_fk FOREIGN KEY ( usuario_usuarioid )
         REFERENCES usuario ( usuarioid );
