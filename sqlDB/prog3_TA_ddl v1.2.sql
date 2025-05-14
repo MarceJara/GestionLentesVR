@@ -122,8 +122,6 @@ CREATE TABLE metricauso (
     activo			    CHAR(1)
 );
 
-ALTER TABLE metricauso ADD CONSTRAINT metricausoUs_pk FOREIGN KEY (usuario_usuarioid) REFERENCES usuario(usuarioid);
-ALTER TABLE metricauso ADD CONSTRAINT metricausoDis_pk FOREIGN KEY (dispositivo_dispositivoid) REFERENCES dispositivo(dispositivoid);
 
 CREATE TABLE rol (
     rolid             INTEGER NOT NULL,
@@ -199,6 +197,6 @@ ALTER TABLE firmware
             REFERENCES dispositivo ( dispositivoid,
                                      grupo_grupoid );
 
-ALTER TABLE metricauso
-    ADD CONSTRAINT metricauso_usuario_fk FOREIGN KEY ( usuario_usuarioid )
-        REFERENCES usuario ( usuarioid );
+ALTER TABLE metricauso ADD CONSTRAINT metricauso_usuario_fk FOREIGN KEY (usuario_usuarioid) REFERENCES usuario(usuarioid);
+ALTER TABLE metricauso ADD CONSTRAINT metricauso_dispositivo_fk FOREIGN KEY (dispositivo_dispositivoid) REFERENCES dispositivo(dispositivoid);
+
