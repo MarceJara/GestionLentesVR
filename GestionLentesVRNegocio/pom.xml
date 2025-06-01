@@ -8,6 +8,18 @@
     </parent>
     <artifactId>GestionLentesVRNegocio</artifactId>
     <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>GestionLentesVRDominio</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>GestionLentesVRPersistencia</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
     <properties>
         <maven.compiler.release>21</maven.compiler.release>
         <exec.mainClass>com.pucp.gestionvr.gestionlentesvrnegocio.GestionLentesVRNegocio</exec.mainClass>

@@ -4,10 +4,18 @@
  */
 package com.pucp.gestionlentesvr.negocio;
 
+import com.pucp.gestionlentesvr.dominio.Grupo;
+import java.util.List;
+
 /**
  *
- * @author itzer
+ * @author oscar
  */
-public class GrupoService {
-    
+public interface GrupoService {
+
+    void registrarGrupo(Grupo elemento) throws Exception;
+    void actualizarGrupo(Grupo elemento) throws Exception;
+    void eliminarGrupo(int id) throws Exception;
+    Grupo obtenerGrupo(int id) throws Exception;
+    List<Grupo> listarGrupo() throws Exception;
 }

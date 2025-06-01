@@ -3,11 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.pucp.gestionlentesvr.negocio;
-
+import com.pucp.gestionlentesvr.dominio.Configuracion;
+import java.util.List;
 /**
  *
- * @author itzer
+ * @author oscar
  */
-public class ConfiguracionService {
-    
+public interface ConfiguracionService {
+    void registrarConfiguracion(Configuracion elemento) throws Exception;
+    void actualizarConfiguracion(Configuracion elemento) throws Exception;
+    void eliminarConfiguracion(int id) throws Exception;
+    Configuracion obtenerConfiguracion(int id) throws Exception;
+    List<Configuracion> listarConfiguracion() throws Exception; 
 }

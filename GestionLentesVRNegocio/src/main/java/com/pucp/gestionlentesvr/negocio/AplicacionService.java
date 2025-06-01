@@ -4,10 +4,16 @@
  */
 package com.pucp.gestionlentesvr.negocio;
 
+import com.pucp.gestionlentesvr.dominio.Aplicacion;
+import java.util.List;
 /**
  *
- * @author itzer
+ * @author oscar
  */
-public class AplicacionService {
-    
+public interface AplicacionService {
+    void registrarAplicacion(Aplicacion elemento) throws Exception;
+    void actualizarAplicacion(Aplicacion elemento) throws Exception;
+    void eliminarAplicacion(int id) throws Exception;
+    Aplicacion obtenerAplicacion(int id) throws Exception;
+    List<Aplicacion> listarAplicacion() throws Exception;   
 }

@@ -4,10 +4,16 @@
  */
 package com.pucp.gestionlentesvr.negocio;
 
+import com.pucp.gestionlentesvr.dominio.Actividad;
+import java.util.List;
 /**
  *
- * @author itzer
+ * @author oscar
  */
-public class ActividadService {
-    
+public interface ActividadService {
+    void registrarActividad(Actividad elemento) throws Exception;
+    void actualizarActividad(Actividad elemento) throws Exception;
+    void eliminarActividad(int id) throws Exception;
+    Actividad obtenerActividad(int id) throws Exception;
+    List<Actividad> listarActividad() throws Exception;   
 }

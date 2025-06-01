@@ -19,7 +19,7 @@ public class ActividadWS {
     private ActividadService service;
     
     public ActividadWS(){
-        service = new ActividadService
+        
     }
     
     @WebMethod(operationName = "hello")

@@ -4,10 +4,16 @@
  */
 package com.pucp.gestionlentesvr.negocio;
 
+import com.pucp.gestionlentesvr.dominio.Usuario;
+import java.util.List;
 /**
  *
- * @author itzer
+ * @author oscar
  */
-public class UsuarioService {
-    
+public interface UsuarioService {
+    void registrarUsuario(Usuario elemento) throws Exception;
+    void actualizarUsuario(Usuario elemento) throws Exception;
+    void eliminarUsuario(int id) throws Exception;
+    Usuario obtenerUsuario(int id) throws Exception;
+    List<Usuario> listarUsuario() throws Exception;
 }

@@ -6,8 +6,8 @@ package com.pucp.gestionlentesvr.negocio;
 
 /**
  *
- * @author itzer
+ * @author oscar
  */
-public class FirmwareService {
+public interface FirmwareService {
     
 }

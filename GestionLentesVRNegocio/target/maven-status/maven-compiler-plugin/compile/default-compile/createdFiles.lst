@@ -1,8 +1,16 @@
 com\pucp\gestionlentesvr\negocio\ActividadService.class
+com\pucp\gestionlentesvr\negocioimpl\FirmwareServiceImpl.class
+com\pucp\gestionlentesvr\negocioimpl\GrupoServiceImpl.class
 com\pucp\gestionlentesvr\negocio\FirmwareService.class
 com\pucp\gestionlentesvr\negocio\UsuarioService.class
+com\pucp\gestionlentesvr\negocioimpl\ConfiguracionServiceImpl.class
 com\pucp\gestionlentesvr\negocio\AplicacionService.class
+com\pucp\gestionlentesvr\negocioimpl\DispositivoServiceImpl.class
 com\pucp\gestionlentesvr\negocio\ConfiguracionService.class
+com\pucp\gestionlentesvr\negocioimpl\ActividadServiceImpl.class
 com\pucp\gestionlentesvr\negocio\GrupoService.class
+com\pucp\gestionlentesvr\negocioimpl\UsuarioServiceImpl.class
+com\pucp\gestionlentesvr\negocioimpl\RolServiceImpl.class
 com\pucp\gestionlentesvr\negocio\RolService.class
 com\pucp\gestionlentesvr\negocio\DispositivoService.class
+com\pucp\gestionlentesvr\negocioimpl\AplicacionServiceImpl.class
