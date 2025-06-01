@@ -9,8 +9,6 @@ com\pucp\gestionlentesvr\negocioimpl\DispositivoServiceImpl.class
 com\pucp\gestionlentesvr\negocio\ConfiguracionService.class
 com\pucp\gestionlentesvr\negocioimpl\ActividadServiceImpl.class
 com\pucp\gestionlentesvr\negocio\GrupoService.class
-com\pucp\gestionlentesvr\negocioimpl\UsuarioServiceImpl.class
-com\pucp\gestionlentesvr\negocioimpl\RolServiceImpl.class
 com\pucp\gestionlentesvr\negocio\RolService.class
 com\pucp\gestionlentesvr\negocio\DispositivoService.class
 com\pucp\gestionlentesvr\negocioimpl\AplicacionServiceImpl.class
