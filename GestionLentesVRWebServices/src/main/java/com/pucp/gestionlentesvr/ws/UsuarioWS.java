@@ -4,22 +4,33 @@
  */
 package com.pucp.gestionlentesvr.ws;
 
+import com.pucp.gestionlentesvr.negocio.UsuarioService;
+import com.pucp.gestionlentesvr.negocioimpl.UsuarioServiceImpl;
+import com.pucp.gestionlentesvr.dominio.Usuario   ;
 import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
-
+import java.util.List;
 /**
  *
  * @author oscar
  */
-@WebService(serviceName = "UsuarioWS")
+@WebService(serviceName = "UsuarioWS", targetNamespace = "com.pucp.gestionlentesvr")
 public class UsuarioWS {
 
-    /**
-     * This is a sample web service operation
-     */
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
+    private final UsuarioService service;
+
+    public UsuarioWS() {
+        this.service = new UsuarioServiceImpl();
+    }
+
+    @WebMethod(operationName = "registrarUsuario")
+    public void registrarUsuario(@WebParam(name = "elemento") Usuario elemento) throws Exception {
+        service.registrarUsuario(elemento);
+    }
+
+    @WebMethod(operationName = "actualizarUsuario")
+    public void actualizarUsuario(@WebParam(name = "elemento") Usuario elemento) throws Exception {
+        service.actualizarUsuario(elemento);
     }
 }
