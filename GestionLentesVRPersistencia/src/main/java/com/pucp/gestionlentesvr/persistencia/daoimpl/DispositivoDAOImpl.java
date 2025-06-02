@@ -1,20 +1,21 @@
 package com.pucp.gestionlentesvr.persistencia.daoimpl;
 
-import com.pucp.gestionlentesvr.dominio.Dispositivo;
+import com.pucp.gestionlentesvr.dominio.dispositivos.Dispositivo;
 import com.pucp.gestionlentesvr.persistencia.BaseDAOImpl;
 import com.pucp.gestionlentesvr.persistencia.dao.DispositivoDAO;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 
 public class DispositivoDAOImpl extends BaseDAOImpl<Dispositivo> implements DispositivoDAO {
 
     @Override
-    protected PreparedStatement getInsertPS(Connection conn, Dispositivo entity) throws SQLException {
+    protected CallableStatement getInsertPS(Connection conn, Dispositivo entity) throws SQLException {
         String query = "{CALL insertar_dispositivo(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
-        cs.setInt(1, entity.getDispositivoId());
+        CallableStatement cs = conn.prepareCall(query);
+        cs.registerOutParameter(1, Types.INTEGER);
         cs.setString(2, entity.getNombre());
         cs.setString(3, entity.getModelo());
         cs.setString(4, entity.getNumeroSerie());
@@ -27,9 +28,9 @@ public class DispositivoDAOImpl extends BaseDAOImpl<Dispositivo> implements Disp
     }
 
     @Override
-    protected PreparedStatement getUpdatePS(Connection conn, Dispositivo entity) throws SQLException {
+    protected CallableStatement getUpdatePS(Connection conn, Dispositivo entity) throws SQLException {
         String query = "{CALL actualizar_dispositivo(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         cs.setInt(1, entity.getDispositivoId());
         cs.setString(2, entity.getNombre());
         cs.setString(3, entity.getModelo());
@@ -47,25 +48,25 @@ public class DispositivoDAOImpl extends BaseDAOImpl<Dispositivo> implements Disp
     }
 
     @Override
-    protected PreparedStatement getDeletePS(Connection conn, Integer id) throws SQLException {
+    protected CallableStatement getDeletePS(Connection conn, Integer id) throws SQLException {
         String query = "{CALL eliminar_dispositivo(?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         cs.setInt(1, id);
         return cs;
     }
 
     @Override
-    protected PreparedStatement getSelectByIdPS(Connection conn, Integer id) throws SQLException {
+    protected CallableStatement getSelectByIdPS(Connection conn, Integer id) throws SQLException {
         String query = "{CALL obtener_dispositivo(?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         cs.setInt(1, id);
         return cs; 
     }
 
     @Override
-    protected PreparedStatement getSelectAllPS(Connection conn) throws SQLException {
+    protected CallableStatement getSelectAllPS(Connection conn) throws SQLException {
         String query = "{CALL listar_configuracion()}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         return cs;
     }
 

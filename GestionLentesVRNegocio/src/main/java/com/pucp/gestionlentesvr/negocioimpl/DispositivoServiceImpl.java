@@ -4,7 +4,7 @@
  */
 package com.pucp.gestionlentesvr.negocioimpl;
 
-import com.pucp.gestionlentesvr.dominio.Dispositivo;
+import com.pucp.gestionlentesvr.dominio.dispositivos.Dispositivo;
 import com.pucp.gestionlentesvr.negocio.DispositivoService;
 import com.pucp.gestionlentesvr.persistencia.dao.DispositivoDAO;
 import com.pucp.gestionlentesvr.persistencia.daoimpl.DispositivoDAOImpl;

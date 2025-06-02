@@ -4,7 +4,7 @@
  */
 package com.pucp.gestionlentesvr.persistencia.dao;
 
-import com.pucp.gestionlentesvr.dominio.MetricaUso;
+import com.pucp.gestionlentesvr.dominio.Usuario.MetricaUso;
 import com.pucp.gestionlentesvr.persistencia.BaseDAO;
 
 /**
