@@ -1,4 +1,4 @@
-# README - Sistema de Gestión de Lentes VR
+# Sistema de Gestión de Lentes VR
 
 ## Descripción
 Sistema web tipo dashboard para la gestión integral de lentes de realidad virtual. Permite administrar aplicaciones de instalación, actualizaciones de firmware y monitoreo de dispositivos, desarrollado bajo arquitectura en capas.

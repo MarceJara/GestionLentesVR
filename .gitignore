@@ -1,1 +1,44 @@
 /GestionLentesVRWebServices/target/
+############################################
+# 1. Configuraciones de editores
+############################################
+.vscode/           # Ajustes locales de VS Code
+.vs/               # Carpeta de configuración interna de Visual Studio
+*.code-workspace   # Archivos de espacio de trabajo
+
+############################################
+# 2. Archivos de usuario y estados de IDE
+############################################
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+############################################
+# 3. Resultados de compilación
+############################################
+bin/
+obj/
+[Bb]uild/
+[Ll]ogs/
+
+############################################
+# 4. Paquetes y artefactos
+############################################
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+############################################
+# 5. Herramientas de inspección/caché
+############################################
+_ReSharper*/
+.idea/
+*.cache
+
+############################################
+# 6. Archivos del sistema operativo
+############################################
+*.DS_Store
+Thumbs.db
