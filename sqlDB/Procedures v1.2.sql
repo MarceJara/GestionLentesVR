@@ -13,8 +13,11 @@ CREATE PROCEDURE insertar_usuario(
     IN p_rol_rolid INT
 )
 BEGIN
-    INSERT INTO usuario(usuarioid, nombre, apellido, correo, contrasena, fechacreacion, rol_rolid, activo)
-    VALUES (p_usuarioid, p_nombre, p_apellido, p_correo, p_contrasena, p_fechacreacion, p_rol_rolid, p_activo);
+    INSERT INTO usuario(nombre, apellido, correo, contrasena, fechacreacion, rol_rolid, activo)
+    VALUES (p_nombre, p_apellido, p_correo, p_contrasena, p_fechacreacion, p_rol_rolid, p_activo);
+	
+    SET p_usuarioid = @@last_insert_id;
+    
 END;
 //
 
@@ -76,8 +79,10 @@ CREATE PROCEDURE insertar_grupo(
     IN p_activo CHAR(1)
 )
 BEGIN
-    INSERT INTO grupo(grupoid, nombre, descripcion, fechacreacion, ubicacion, activo)
-    VALUES (p_grupoid, p_nombre, p_descripcion, p_fechacreacion, p_ubicacion, p_activo);
+    INSERT INTO grupo(nombre, descripcion, fechacreacion, ubicacion, activo)
+    VALUES (p_nombre, p_descripcion, p_fechacreacion, p_ubicacion, p_activo);
+	
+    SET p_grupoid = @@last_insert_id;
 END;
 //
 
@@ -140,8 +145,10 @@ CREATE PROCEDURE insertar_dispositivo(
     IN p_grupo_grupoid INT
 )
 BEGIN
-    INSERT INTO dispositivo(dispositivoid, nombre, modelo, numeroserie, fecharegistro, ubicacion, activo, nivelbateria, ultimaconexion, grupo_grupoid)
-    VALUES (p_dispositivoid, p_nombre, p_modelo, p_numeroserie, p_fecharegistro, p_ubicacion, p_activo, p_nivelbateria, p_ultimaconexion, p_grupo_grupoid);
+    INSERT INTO dispositivo(nombre, modelo, numeroserie, fecharegistro, ubicacion, activo, nivelbateria, ultimaconexion, grupo_grupoid)
+    VALUES (p_nombre, p_modelo, p_numeroserie, p_fecharegistro, p_ubicacion, p_activo, p_nivelbateria, p_ultimaconexion, p_grupo_grupoid);
+
+	SET p_dispositivoid = @@last_insert_id;
 END;
 //
 
@@ -217,8 +224,10 @@ CREATE PROCEDURE insertar_actividad(
     IN p_activo CHAR(1)
 )
 BEGIN
-    INSERT INTO actividad(actividadid, fechahora, descripcion, detallestecnicos, usuario_usuarioid, dispositivo_dispositivoid, dispositivo_grupo_grupoid, activo)
-    VALUES (p_actividadid, p_fechahora, p_descripcion, p_detallestecnicos, p_usuario_usuarioid, p_dispositivo_dispositivoid, p_dispositivo_grupo_grupoid, p_activo);
+    INSERT INTO actividad(fechahora, descripcion, detallestecnicos, usuario_usuarioid, dispositivo_dispositivoid, dispositivo_grupo_grupoid, activo)
+    VALUES (p_fechahora, p_descripcion, p_detallestecnicos, p_usuario_usuarioid, p_dispositivo_dispositivoid, p_dispositivo_grupo_grupoid, p_activo);
+
+	SET p_actividadid = @@last_insert_id;
 END;
 //
 
@@ -285,8 +294,10 @@ CREATE PROCEDURE insertar_aplicacion(
     IN p_activo CHAR(1)
 )
 BEGIN
-    INSERT INTO aplicacion(aplicacionid, nombre, version, desarrollador, fechalanzamiento, descripcion, tamanomb, rutainstalador, activo)
-    VALUES (p_aplicacionid, p_nombre, p_version, p_desarrollador, p_fechalanzamiento, p_descripcion, p_tamanomb, p_rutainstalador, p_activo);
+    INSERT INTO aplicacion(nombre, version, desarrollador, fechalanzamiento, descripcion, tamanomb, rutainstalador, activo)
+    VALUES (p_nombre, p_version, p_desarrollador, p_fechalanzamiento, p_descripcion, p_tamanomb, p_rutainstalador, p_activo);
+
+	SET p_aplicacionid = @@last_insert_id;
 END;
 //
 
@@ -357,8 +368,10 @@ CREATE PROCEDURE insertar_configuracion(
     IN p_activo CHAR(1)
 )
 BEGIN
-    INSERT INTO configuracion(configuracionid, nombre, descripcion, fechacreacion, valor, usuario_usuarioid, activo)
-    VALUES (p_configuracionid, p_nombre, p_descripcion, p_fechacreacion, p_valor, p_usuario_usuarioid, p_activo);
+    INSERT INTO configuracion(nombre, descripcion, fechacreacion, valor, usuario_usuarioid, activo)
+    VALUES (p_nombre, p_descripcion, p_fechacreacion, p_valor, p_usuario_usuarioid, p_activo);
+
+	SET p_configuracionid = @@last_insert_id;
 END;
 //
 
@@ -430,8 +443,10 @@ CREATE PROCEDURE insertar_firmware(
     IN p_activo CHAR(1)
 )
 BEGIN
-    INSERT INTO firmware(firmwareid, nombre, version, fechalanzamiento, descripcion, rutaarchivo, dispositivo_dispositivoid, dispositivo_grupo_grupoid, activo)
-    VALUES (p_firmwareid, p_nombre, p_version, p_fechalanzamiento, p_descripcion, p_rutaarchivo, p_dispositivo_dispositivoid, p_dispositivo_grupo_grupoid, p_activo);
+    INSERT INTO firmware(nombre, version, fechalanzamiento, descripcion, rutaarchivo, dispositivo_dispositivoid, dispositivo_grupo_grupoid, activo)
+    VALUES (p_nombre, p_version, p_fechalanzamiento, p_descripcion, p_rutaarchivo, p_dispositivo_dispositivoid, p_dispositivo_grupo_grupoid, p_activo);
+
+	SET p_firmwareid = @@last_insert_id;
 END;
 //
 
@@ -504,8 +519,10 @@ CREATE PROCEDURE insertar_metricauso(
     IN p_activo CHAR(1)
 )
 BEGIN
-    INSERT INTO metricauso(metricaid, fecharegistro, tiempousominutos, nivelbateriainicial, nivelbateriafinal, usuario_usuarioid, activo)
-    VALUES (p_metricaid, p_fecharegistro, p_tiempousominutos, p_nivelbateriainicial, p_nivelbateriafinal, p_usuario_usuarioid, p_activo);
+    INSERT INTO metricauso(fecharegistro, tiempousominutos, nivelbateriainicial, nivelbateriafinal, usuario_usuarioid, activo)
+    VALUES (p_fecharegistro, p_tiempousominutos, p_nivelbateriainicial, p_nivelbateriafinal, p_usuario_usuarioid, p_activo);
+
+	SET p_metricaid = @@last_insert_id;
 END;
 //
 
@@ -572,8 +589,10 @@ CREATE PROCEDURE insertar_rol(
     IN p_activo CHAR(1)
 )
 BEGIN
-    INSERT INTO rol(rolid, nombre, descripcion, activo)
-    VALUES (p_rolid, p_nombre, p_descripcion, p_activo);
+    INSERT INTO rol(nombre, descripcion, activo)
+    VALUES (p_nombre, p_descripcion, p_activo);
+
+	SET p_rolid = @@last_insert_id;
 END;
 //
 
