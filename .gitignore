@@ -42,3 +42,6 @@ _ReSharper*/
 ############################################
 *.DS_Store
 Thumbs.db
+
+# Deja de ignorar los archivos .csproj
+!*.csproj
