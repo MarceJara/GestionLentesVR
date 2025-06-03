@@ -1,21 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Marcelo\\JavaProjects\\GestionLentesVR\\GestionLentesVRPresentacion\\",
+  "WorkspaceRootPath": "C:\\Marcelo\\JavaProjects\\GestionLentesVR\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Vistas\\PantallaInicio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|GestionLentesVRPresentacion\\FrontVR.csproj|c:\\marcelo\\javaprojects\\gestionlentesvr\\gestionlentesvrpresentacion\\vistas\\aplicaciones.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|GestionLentesVRPresentacion\\FrontVR.csproj|solutionrelative:gestionlentesvrpresentacion\\vistas\\aplicaciones.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Vistas\\Dispositivos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|GestionLentesVRPresentacion\\FrontVR.csproj|c:\\marcelo\\javaprojects\\gestionlentesvr\\gestionlentesvrpresentacion\\vistas\\aplicaciones.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|GestionLentesVRPresentacion\\FrontVR.csproj|solutionrelative:gestionlentesvrpresentacion\\vistas\\aplicaciones.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Vistas\\PantallaInicio.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|GestionLentesVRPresentacion\\FrontVR.csproj|C:\\Marcelo\\JavaProjects\\GestionLentesVR\\gestionlentesvrpresentacion\\vistas\\dispositivos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|GestionLentesVRPresentacion\\FrontVR.csproj|solutionrelative:gestionlentesvrpresentacion\\vistas\\dispositivos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|GestionLentesVRPresentacion\\FrontVR.csproj|c:\\marcelo\\javaprojects\\gestionlentesvr\\gestionlentesvrpresentacion\\bundle.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|GestionLentesVRPresentacion\\FrontVR.csproj|solutionrelative:gestionlentesvrpresentacion\\bundle.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Site.Master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+      "AbsoluteMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|GestionLentesVRPresentacion\\FrontVR.csproj|c:\\marcelo\\javaprojects\\gestionlentesvr\\gestionlentesvrpresentacion\\contact.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|GestionLentesVRPresentacion\\FrontVR.csproj|solutionrelative:gestionlentesvrpresentacion\\contact.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|GestionLentesVRPresentacion\\FrontVR.csproj|c:\\marcelo\\javaprojects\\gestionlentesvr\\gestionlentesvrpresentacion\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|GestionLentesVRPresentacion\\FrontVR.csproj|solutionrelative:gestionlentesvrpresentacion\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,61 +43,80 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PantallaInicio.aspx",
-              "DocumentMoniker": "C:\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Vistas\\PantallaInicio.aspx",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Vistas\\PantallaInicio.aspx",
-              "ToolTip": "C:\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Vistas\\PantallaInicio.aspx",
-              "RelativeToolTip": "..\\..\\..\\..\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Vistas\\PantallaInicio.aspx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-06-02T17:28:20.631Z"
+              "Title": "Aplicaciones.aspx.cs",
+              "DocumentMoniker": "C:\\Marcelo\\JavaProjects\\GestionLentesVR\\GestionLentesVRPresentacion\\Vistas\\Aplicaciones.aspx.cs",
+              "RelativeDocumentMoniker": "GestionLentesVRPresentacion\\Vistas\\Aplicaciones.aspx.cs",
+              "ToolTip": "C:\\Marcelo\\JavaProjects\\GestionLentesVR\\GestionLentesVRPresentacion\\Vistas\\Aplicaciones.aspx.cs",
+              "RelativeToolTip": "GestionLentesVRPresentacion\\Vistas\\Aplicaciones.aspx.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAA2wH0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T02:53:02.279Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Dispositivos.aspx",
-              "DocumentMoniker": "C:\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Vistas\\Dispositivos.aspx",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Vistas\\Dispositivos.aspx",
-              "ToolTip": "C:\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Vistas\\Dispositivos.aspx",
-              "RelativeToolTip": "..\\..\\..\\..\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Vistas\\Dispositivos.aspx",
+              "Title": "Aplicaciones.aspx",
+              "DocumentMoniker": "C:\\Marcelo\\JavaProjects\\GestionLentesVR\\GestionLentesVRPresentacion\\Vistas\\Aplicaciones.aspx",
+              "RelativeDocumentMoniker": "GestionLentesVRPresentacion\\Vistas\\Aplicaciones.aspx",
+              "ToolTip": "C:\\Marcelo\\JavaProjects\\GestionLentesVR\\GestionLentesVRPresentacion\\Vistas\\Aplicaciones.aspx",
+              "RelativeToolTip": "GestionLentesVRPresentacion\\Vistas\\Aplicaciones.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-06-02T17:23:34.262Z"
+              "WhenOpened": "2025-06-03T02:52:32.763Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PantallaInicio.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Vistas\\PantallaInicio.aspx.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Vistas\\PantallaInicio.aspx.cs",
-              "ToolTip": "C:\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Vistas\\PantallaInicio.aspx.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Vistas\\PantallaInicio.aspx.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T17:20:18.146Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Default.aspx",
-              "DocumentMoniker": "C:\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Default.aspx",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Default.aspx",
-              "ToolTip": "C:\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Default.aspx",
-              "RelativeToolTip": "..\\..\\..\\..\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Default.aspx",
+              "DocumentMoniker": "C:\\Marcelo\\JavaProjects\\GestionLentesVR\\GestionLentesVRPresentacion\\Default.aspx",
+              "RelativeDocumentMoniker": "GestionLentesVRPresentacion\\Default.aspx",
+              "ToolTip": "C:\\Marcelo\\JavaProjects\\GestionLentesVR\\GestionLentesVRPresentacion\\Default.aspx",
+              "RelativeToolTip": "GestionLentesVRPresentacion\\Default.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-06-02T17:12:05.811Z"
+              "WhenOpened": "2025-06-03T02:48:06.421Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Site.Master",
-              "DocumentMoniker": "C:\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Site.Master",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Site.Master",
-              "ToolTip": "C:\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Site.Master",
-              "RelativeToolTip": "..\\..\\..\\..\\Users\\Administrador\\source\\repos\\FrontVR\\FrontVR\\Site.Master",
+              "Title": "Contact.aspx",
+              "DocumentMoniker": "C:\\Marcelo\\JavaProjects\\GestionLentesVR\\GestionLentesVRPresentacion\\Contact.aspx",
+              "RelativeDocumentMoniker": "GestionLentesVRPresentacion\\Contact.aspx",
+              "ToolTip": "C:\\Marcelo\\JavaProjects\\GestionLentesVR\\GestionLentesVRPresentacion\\Contact.aspx",
+              "RelativeToolTip": "GestionLentesVRPresentacion\\Contact.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-06-02T17:09:39.727Z"
+              "WhenOpened": "2025-06-03T02:47:59.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Bundle.config",
+              "DocumentMoniker": "C:\\Marcelo\\JavaProjects\\GestionLentesVR\\GestionLentesVRPresentacion\\Bundle.config",
+              "RelativeDocumentMoniker": "GestionLentesVRPresentacion\\Bundle.config",
+              "ToolTip": "C:\\Marcelo\\JavaProjects\\GestionLentesVR\\GestionLentesVRPresentacion\\Bundle.config",
+              "RelativeToolTip": "GestionLentesVRPresentacion\\Bundle.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-06-03T02:47:57.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dispositivos.aspx",
+              "DocumentMoniker": "C:\\Marcelo\\JavaProjects\\GestionLentesVR\\GestionLentesVRPresentacion\\Vistas\\Dispositivos.aspx",
+              "RelativeDocumentMoniker": "GestionLentesVRPresentacion\\Vistas\\Dispositivos.aspx",
+              "ToolTip": "C:\\Marcelo\\JavaProjects\\GestionLentesVR\\GestionLentesVRPresentacion\\Vistas\\Dispositivos.aspx",
+              "RelativeToolTip": "GestionLentesVRPresentacion\\Vistas\\Dispositivos.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-02T21:25:50.811Z",
+              "EditorCaption": ""
             }
           ]
         }
