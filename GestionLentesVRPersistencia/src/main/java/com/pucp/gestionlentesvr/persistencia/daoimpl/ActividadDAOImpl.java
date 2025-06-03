@@ -1,6 +1,8 @@
 package com.pucp.gestionlentesvr.persistencia.daoimpl;
 
+import com.pucp.gestionlentesvr.dominio.Usuario.Usuario;
 import com.pucp.gestionlentesvr.dominio.dispositivos.Actividad;
+import com.pucp.gestionlentesvr.dominio.dispositivos.Dispositivo;
 import com.pucp.gestionlentesvr.persistencia.BaseDAOImpl;
 import com.pucp.gestionlentesvr.persistencia.dao.ActividadDAO;
 import java.sql.Connection;
@@ -75,9 +77,11 @@ public class ActividadDAOImpl extends BaseDAOImpl<Actividad> implements Activida
         act.setFechaHora(rs.getDate("fechahora"));
         act.setDescripcion(rs.getString("descripcion"));
         act.setDetallesTecnicos(rs.getString("detallestecnicos"));
-        act.getUsuario().setUsuarioId(rs.getInt("usuario_usuarioid"));
-        act.getDispositivoAfectado().setDispositivoId(rs.getInt("dispositivo_dispositivoid"));
-        act.getDispositivoAfectado().getGrupo().setGrupoId(rs.getInt("dispositivo_grupo_grupoid"));
+        Usuario user = act.getUsuario();
+        user.setUsuarioId(rs.getInt("usuario_usuarioid"));
+        Dispositivo dis= act.getDispositivoAfectado();
+        dis.setDispositivoId(rs.getInt("dispositivo_dispositivoid"));
+        dis.getGrupo().setGrupoId(rs.getInt("dispositivo_grupo_grupoid"));
         if(rs.getString("activo").compareTo("S")==0){
             act.setActivo(true);
         }else{

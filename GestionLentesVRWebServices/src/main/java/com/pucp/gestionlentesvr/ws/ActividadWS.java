@@ -23,29 +23,8 @@ public class ActividadWS {
     }
 
     @WebMethod(operationName = "registrarActividad")
-    public boolean registrarActividad() {
-        Actividad act = new Actividad();
-        act.setActivo(true);
-        act.setDescripcion("Actividad Prueba");
-        act.setFechaHora(Date.valueOf("2010-11-15"));
-        act.setDetallesTecnicos("Actividad Tecnica");
-        Dispositivo dis = new Dispositivo();
-        dis.setDispositivoId(1);
-        Grupo grupo = new Grupo();
-        grupo.setGrupoId(1);
-        dis.setGrupo(grupo);
-        act.setDispositivoAfectado(dis);
-        act.setTipoActividad(TipoActividad.ASIGNACION_GRUPO);
-        Usuario user = new Usuario();
-        user.setUsuarioId(1);
-        act.setUsuario(user);
-        try {
-            service.registrarActividad(act);
-            return true;
-        } catch (Exception ex) {
-            System.out.println("Error: " + ex);
-            return false;
-        }
+    public void registrarActividad(@WebParam(name = "actividad") Actividad actividad) throws Exception {
+        service.registrarActividad(actividad);
     }
 
     @WebMethod(operationName = "actualizarActividad")

@@ -19,6 +19,8 @@ public class Actividad {
     
     public Actividad() {
         this.fechaHora = new Date();
+        usuario= new Usuario();
+        dispositivoAfectado=new Dispositivo();
     }
     
     public Actividad(int actividadId, Usuario usuario, TipoActividad tipoActividad, 

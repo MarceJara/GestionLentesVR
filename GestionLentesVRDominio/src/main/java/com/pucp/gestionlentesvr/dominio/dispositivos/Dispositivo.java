@@ -30,6 +30,7 @@ public class Dispositivo {
         this.estadoConexion = EstadoConexion.DESCONECTADO;
         this.aplicacionesInstaladas = new ArrayList<>();
         this.configuraciones = new ArrayList<>();
+        this.grupo = new Grupo();
     }
     
     public Dispositivo(int dispositivoId, String nombre, String modelo, String numeroSerie, 

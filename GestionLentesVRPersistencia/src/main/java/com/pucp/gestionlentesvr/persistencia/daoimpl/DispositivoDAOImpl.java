@@ -65,7 +65,7 @@ public class DispositivoDAOImpl extends BaseDAOImpl<Dispositivo> implements Disp
 
     @Override
     protected CallableStatement getSelectAllPS(Connection conn) throws SQLException {
-        String query = "{CALL listar_configuracion()}";
+        String query = "{CALL listar_dispositivo()}";
         CallableStatement cs = conn.prepareCall(query);
         return cs;
     }
@@ -77,7 +77,7 @@ public class DispositivoDAOImpl extends BaseDAOImpl<Dispositivo> implements Disp
         dev.setNombre(rs.getString("nombre"));
         dev.setModelo(rs.getString("modelo"));
         dev.setNumeroSerie(rs.getString("numeroserie"));
-        dev.setFechaRegistro(rs.getDate("fecharegistro"));
+        dev.setFechaRegistro(new java.util.Date(rs.getDate("fecharegistro").getTime()));
         dev.setUbicacion(rs.getString("ubicacion"));
         if(rs.getString("activo").compareTo("S")==0){
             dev.setActivo(true);
