@@ -6,10 +6,6 @@ package com.pucp.gestionlentesvr.negocioimpl;
 
 import com.pucp.gestionlentesvr.negocio.*;
 
-/**
- *
- * @author oscar
- */
 public class FirmwareServiceImpl {
     
 }
