@@ -4,6 +4,7 @@
  */
 package com.pucp.gestionlentesvr.ws;
 
+import com.pucp.gestionlentesvr.dominio.Usuario.Grupo;
 import com.pucp.gestionlentesvr.dominio.Usuario.TipoActividad;
 import com.pucp.gestionlentesvr.dominio.Usuario.Usuario;
 import com.pucp.gestionlentesvr.dominio.dispositivos.Actividad;
@@ -12,7 +13,6 @@ import com.pucp.gestionlentesvr.negocio.ActividadService;
 import com.pucp.gestionlentesvr.negocioimpl.ActividadServiceImpl;
 import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
-import jakarta.jws.WebParam;
 import java.sql.Date;
 
 /**
@@ -33,11 +33,14 @@ public class ActividadWS {
         Actividad act= new Actividad();
         act.setActivo(true);
         act.setDescripcion("Actividad Prueba");
+        act.setFechaHora(Date.valueOf("2010-11-15"));
         act.setDetallesTecnicos("Actividad Tecnica");
         Dispositivo dis= new Dispositivo();
         dis.setDispositivoId(1);
+        Grupo grupo= new Grupo();
+        grupo.setGrupoId(1);
+        dis.setGrupo(grupo);
         act.setDispositivoAfectado(dis);
-        act.setFechaHora(null);
         act.setTipoActividad(TipoActividad.ASIGNACION_GRUPO);
         Usuario user= new Usuario();
         user.setUsuarioId(1);

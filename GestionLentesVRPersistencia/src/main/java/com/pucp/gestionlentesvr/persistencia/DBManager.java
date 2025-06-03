@@ -1,49 +1,86 @@
 package com.pucp.gestionlentesvr.persistencia;
 
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
+/**
+ *
+ * @author eric
+ */
 public class DBManager {
-    private static DBManager instance;
-    private String jdbcUrl;
-    private String username;
+    private static DBManager dbManager;
+    
+    private String host;
+    private int puerto;
+    private String esquema;
+    private String usuario;
     private String password;
     
-    private DBManager() {
-        configurar();
+    private DBManager() throws IOException {
+        cargarProperties();
     }
-
-    public static synchronized DBManager getInstance() {
-        if (instance == null) {
-            instance = new DBManager();
+    
+    public synchronized static DBManager getInstance()  {
+        if (dbManager == null) {
+            createInstance();
         }
-        return instance;
+        return dbManager;
     }
-
-    private void configurar() {
+    
+    private static void createInstance() {
+        try {
+            dbManager = new DBManager();
+        } catch (IOException ex) {
+            Logger.getLogger(DBManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public Connection obtenerConexion()  {
+        try {
+            /* 
+            Por ahora creamos una conexion cada vez que se necesita acceder a la base de datos, 
+            por ser una aplicacion academica es una practica aceptable, en un sistema productivo
+            se debe usar un pool de conexiones.
+            */
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String cadenaConexion = cadenaConexion(host, puerto, esquema);
+            return DriverManager.getConnection(cadenaConexion, usuario, password);
+        }
+        catch (ClassNotFoundException | SQLException e) {
+            System.err.println(e);
+        }
+        return null;
+    }
+    
+    private void cargarProperties() throws IOException {
         Properties properties = new Properties();
-        String propertiesFile = "db.properties";
-
-        try (InputStream input = getClass().getClassLoader().getResourceAsStream(propertiesFile)) {
+        try (InputStream input = getClass().getClassLoader().getResourceAsStream("db.properties")) {
             if (input == null) {
-                throw new IOException("No se pudo encontrar el archivo de propiedades: " + propertiesFile);
+                System.err.println("No se pudo abrir el archivo db.properties");
+                return;
             }
+            
             properties.load(input);
-        } catch (IOException e) {
-            throw new RuntimeException("Error al cargar el archivo de propiedades", e);
+            
+            host = properties.getProperty("db.host");
+            puerto = Integer.parseInt(properties.getProperty("db.puerto"));
+            esquema = properties.getProperty("db.esquema");
+            usuario = properties.getProperty("db.usuario");
+            password = properties.getProperty("db.password");
         }
-
-        jdbcUrl = properties.getProperty("mysql.jdbcUrl");
-        username = properties.getProperty("mysql.username");
-        password = properties.getProperty("mysql.password");
+        catch (IOException e) {
+            System.err.println("No se pudo cargar el archivo db.properties");
+            throw e;
+        }
     }
-
-    public Connection obtenerConexion() throws SQLException {
-        return DriverManager.getConnection(jdbcUrl, username, password);
+    
+    private String cadenaConexion(String host, int puerto, String esquema) {
+        return String.format("jdbc:mysql://%s:%d/%s?useSSL=false&allowPublicKeyRetrieval=true", host, puerto, esquema);
     }
 }
