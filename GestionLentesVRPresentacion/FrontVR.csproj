@@ -133,7 +133,35 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <None Include="Connected Services\DispositivosWS\configuration91.svcinfo" />
+    <None Include="Connected Services\DispositivosWS\configuration.svcinfo" />
+    <Content Include="Connected Services\DispositivosWS\FrontVR.DispositivosWS.actualizarDispositivoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\DispositivosWS\FrontVR.DispositivosWS.dispositivo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\DispositivosWS\FrontVR.DispositivosWS.eliminarDispositivoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\DispositivosWS\FrontVR.DispositivosWS.listarDispositivoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\DispositivosWS\FrontVR.DispositivosWS.obtenerDispositivoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\DispositivosWS\FrontVR.DispositivosWS.registrarDispositivoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\DispositivosWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Login.aspx" />
+    <None Include="Connected Services\DispositivosWS\DispositivoWS.wsdl" />
+    <None Include="Connected Services\DispositivosWS\DispositivoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\GestionLentesWS\configuration91.svcinfo" />
     <None Include="Connected Services\GestionLentesWS\configuration.svcinfo" />
     <Content Include="Connected Services\GestionLentesWS\FrontVR.GestionLentesWS.actualizarAplicacionResponse.datasource">
@@ -259,6 +287,11 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Connected Services\DispositivosWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\GestionLentesWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -357,6 +390,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\DispositivosWS\" />
     <WCFMetadataStorage Include="Connected Services\GestionLentesWS\" />
   </ItemGroup>
   <PropertyGroup>
