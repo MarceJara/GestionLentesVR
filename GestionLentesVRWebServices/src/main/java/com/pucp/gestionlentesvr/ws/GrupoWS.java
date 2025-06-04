@@ -1,23 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/WebServices/WebService.java to edit this template
- */
 package com.pucp.gestionlentesvr.ws;
 
+import com.pucp.gestionlentesvr.dominio.Usuario.Grupo;
 import com.pucp.gestionlentesvr.negocio.GrupoService;
 import com.pucp.gestionlentesvr.negocioimpl.GrupoServiceImpl;
-import com.pucp.gestionlentesvr.dominio.Grupo   ;
 import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
-import java.util.List;
-/**
- *
- * @author oscar
- */
-@WebService(serviceName = "GrupoWS", targetNamespace = "com.pucp.gestionlentesvr")
-public class GrupoWS {
 
+@WebService(serviceName = "GrupoWS")
+public class GrupoWS {
 
     private final GrupoService service;
 

@@ -1,22 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/WebServices/WebService.java to edit this template
- */
 package com.pucp.gestionlentesvr.ws;
+
+import com.pucp.gestionlentesvr.dominio.dispositivos.Aplicacion;
 import com.pucp.gestionlentesvr.negocio.AplicacionService;
 import com.pucp.gestionlentesvr.negocioimpl.AplicacionServiceImpl;
-import com.pucp.gestionlentesvr.dominio.Aplicacion;
 import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
 import java.util.List;
-/**
- *
- * @author oscar
- */
-@WebService(serviceName = "AplicacionWS", targetNamespace = "com.pucp.gestionlentesvr")
-public class AplicacionWS {
 
+@WebService(serviceName = "AplicacionWS")
+public class AplicacionWS {
 
     private final AplicacionService service;
 

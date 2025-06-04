@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.pucp.gestionlentesvr.negocio;
-import com.pucp.gestionlentesvr.dominio.Rol;
+import com.pucp.gestionlentesvr.dominio.Usuario.Rol;
 import java.util.List;
 /**
  *

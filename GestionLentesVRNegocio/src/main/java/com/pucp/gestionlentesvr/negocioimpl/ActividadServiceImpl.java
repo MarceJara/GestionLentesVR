@@ -4,7 +4,7 @@
  */
 package com.pucp.gestionlentesvr.negocioimpl;
 
-import com.pucp.gestionlentesvr.dominio.Actividad;
+import com.pucp.gestionlentesvr.dominio.dispositivos.Actividad;
 import com.pucp.gestionlentesvr.negocio.ActividadService;
 import com.pucp.gestionlentesvr.persistencia.dao.ActividadDAO;
 import com.pucp.gestionlentesvr.persistencia.daoimpl.ActividadDAOImpl;
@@ -25,28 +25,21 @@ public class ActividadServiceImpl implements ActividadService{
     @Override
     public void registrarActividad(Actividad elemento) throws Exception {
 
-        if (elemento.getUsuario() == null) {
-            throw new Exception("La actividad debe tener un usuario asociado");
-        }
-        if (elemento.getFechaHora() == null) {
-            throw new Exception("La fecha y hora de la actividad no pueden ser nulas");
-        }
-        if (elemento.getTipoActividad() == null) {
-            throw new Exception("La actividad debe tener un tipo definido");
-        }
-        if (elemento.getDescripcion() == null || elemento.getDescripcion().trim().isEmpty()) {
-            throw new Exception("La descripción de la actividad no puede estar vacía");
-        }
-        if (elemento.getDetallesTecnicos() == null || elemento.getDetallesTecnicos().trim().isEmpty()) {
-            throw new Exception("Los detalles técnicos no pueden estar vacíos");
-        }
-        if (elemento.getDispositivoAfectado() == null) {
-            throw new Exception("Debe especificarse el dispositivo afectado por la actividad");
-        }
-        
-        if (elemento.getActividadId() <= 0) {
-            throw new Exception("El ID de la actividad debe ser un valor positivo");
-        }
+//        if (elemento.getUsuario() == null) {
+//            throw new Exception("La actividad debe tener un usuario asociado");
+//        }
+//        if (elemento.getTipoActividad() == null) {
+//            throw new Exception("La actividad debe tener un tipo definido");
+//        }
+//        if (elemento.getDescripcion() == null || elemento.getDescripcion().trim().isEmpty()) {
+//            throw new Exception("La descripción de la actividad no puede estar vacía");
+//        }
+//        if (elemento.getDetallesTecnicos() == null || elemento.getDetallesTecnicos().trim().isEmpty()) {
+//            throw new Exception("Los detalles técnicos no pueden estar vacíos");
+//        }
+//        if (elemento.getDispositivoAfectado() == null) {
+//            throw new Exception("Debe especificarse el dispositivo afectado por la actividad");
+//        }
 
         // Si pasa todas las validaciones, registra el cliente
         dao.agregar(elemento);
@@ -55,15 +48,9 @@ public class ActividadServiceImpl implements ActividadService{
     @Override
     public void actualizarActividad(Actividad elemento) throws Exception {
         
-        if (dao.obtener(elemento.getActividadId()) == null) {
-            throw new Exception("El cliente no existe");
-        }
 
         if (elemento.getUsuario() == null) {
             throw new Exception("La actividad debe tener un usuario asociado");
-        }
-        if (elemento.getFechaHora() == null) {
-            throw new Exception("La fecha y hora de la actividad no pueden ser nulas");
         }
         if (elemento.getTipoActividad() == null) {
             throw new Exception("La actividad debe tener un tipo definido");
@@ -77,10 +64,7 @@ public class ActividadServiceImpl implements ActividadService{
         if (elemento.getDispositivoAfectado() == null) {
             throw new Exception("Debe especificarse el dispositivo afectado por la actividad");
         }
-        
-        if (elemento.getActividadId() <= 0) {
-            throw new Exception("El ID de la actividad debe ser un valor positivo");
-        }
+  
 
         dao.actualizar(elemento);
     }

@@ -1,20 +1,21 @@
 package com.pucp.gestionlentesvr.persistencia.daoimpl;
 
-import com.pucp.gestionlentesvr.dominio.Rol;
+import com.pucp.gestionlentesvr.dominio.Usuario.Rol;
 import com.pucp.gestionlentesvr.persistencia.BaseDAOImpl;
 import com.pucp.gestionlentesvr.persistencia.dao.RolDAO;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 
 public class RolDAOImpl extends BaseDAOImpl<Rol> implements RolDAO {
 
     @Override
-    protected PreparedStatement getInsertPS(Connection conn, Rol entity) throws SQLException {
+    protected CallableStatement getInsertPS(Connection conn, Rol entity) throws SQLException {
         String query = "{CALL insertar_rol(?, ?, ?, ?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
-        cs.setInt(1, entity.getRolId());
+        CallableStatement cs = conn.prepareCall(query);
+        cs.registerOutParameter(1, Types.INTEGER);
         cs.setString(2, entity.getNombre());
         cs.setString(3, entity.getDescripcion());
         cs.setString(4, "S");
@@ -22,9 +23,9 @@ public class RolDAOImpl extends BaseDAOImpl<Rol> implements RolDAO {
     }
 
     @Override
-    protected PreparedStatement getUpdatePS(Connection conn, Rol entity) throws SQLException {
+    protected CallableStatement getUpdatePS(Connection conn, Rol entity) throws SQLException {
         String query = "{CALL actualizar_rol(?, ?, ?, ?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         cs.setInt(1, entity.getRolId());
         cs.setString(2, entity.getNombre());
         cs.setString(3, entity.getDescripcion());
@@ -37,25 +38,25 @@ public class RolDAOImpl extends BaseDAOImpl<Rol> implements RolDAO {
     }
 
     @Override
-    protected PreparedStatement getDeletePS(Connection conn, Integer id) throws SQLException {
+    protected CallableStatement getDeletePS(Connection conn, Integer id) throws SQLException {
         String query = "{CALL eliminar_rol(?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         cs.setInt(1, id);
         return cs;
     }
 
     @Override
-    protected PreparedStatement getSelectByIdPS(Connection conn, Integer id) throws SQLException {
+    protected CallableStatement getSelectByIdPS(Connection conn, Integer id) throws SQLException {
         String query = "{CALL obtener_rol(?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         cs.setInt(1, id);
         return cs;
     }
 
     @Override
-    protected PreparedStatement getSelectAllPS(Connection conn) throws SQLException {
+    protected CallableStatement getSelectAllPS(Connection conn) throws SQLException {
         String query = "{CALL listar_rol(?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         return cs;
     }
 

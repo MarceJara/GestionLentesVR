@@ -4,13 +4,14 @@
  */
 package com.pucp.gestionlentesvr.persistencia.daoimpl;
 
-import com.pucp.gestionlentesvr.dominio.MetricaUso;
+import com.pucp.gestionlentesvr.dominio.Usuario.MetricaUso;
 import com.pucp.gestionlentesvr.persistencia.BaseDAOImpl;
 import com.pucp.gestionlentesvr.persistencia.dao.MetricaUsoDAO;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 
 /**
  *
@@ -19,10 +20,10 @@ import java.sql.SQLException;
 public class MetricaUsoDAOImpl extends BaseDAOImpl<MetricaUso> implements MetricaUsoDAO{
 
     @Override
-    protected PreparedStatement getInsertPS(Connection conn, MetricaUso entity) throws SQLException {
+    protected CallableStatement getInsertPS(Connection conn, MetricaUso entity) throws SQLException {
        String query = "{CALL insertar_metricauso(?, ?, ?, ?,?, ?, ?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
-        cs.setInt(1, entity.getMetricaId());
+        CallableStatement cs = conn.prepareCall(query);
+        cs.registerOutParameter(1, Types.INTEGER);
         cs.setTimestamp(2, new java.sql.Timestamp(entity.getFechaRegistro().getTime()));
         cs.setInt(3, entity.getTiempoUsoMinutos());
         cs.setInt(4, entity.getNivelBateriaInicial());
@@ -34,9 +35,9 @@ public class MetricaUsoDAOImpl extends BaseDAOImpl<MetricaUso> implements Metric
     }
 
     @Override
-    protected PreparedStatement getUpdatePS(Connection conn, MetricaUso entity) throws SQLException {
+    protected CallableStatement getUpdatePS(Connection conn, MetricaUso entity) throws SQLException {
         String query = "{CALL actualizar_metricauso(?, ?, ?,  ?, ?, ?,?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         cs.setInt(1, entity.getMetricaId());
         cs.setTimestamp(2, new java.sql.Timestamp(entity.getFechaRegistro().getTime()));
         cs.setInt(3, entity.getTiempoUsoMinutos());
@@ -53,25 +54,25 @@ public class MetricaUsoDAOImpl extends BaseDAOImpl<MetricaUso> implements Metric
     }
 
     @Override
-    protected PreparedStatement getDeletePS(Connection conn, Integer id) throws SQLException {
+    protected CallableStatement getDeletePS(Connection conn, Integer id) throws SQLException {
         String query = "{CALL eliminar_metricauso(?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         cs.setInt(1, id);
         return cs;
     }
 
     @Override
-    protected PreparedStatement getSelectByIdPS(Connection conn, Integer id) throws SQLException {
+    protected CallableStatement getSelectByIdPS(Connection conn, Integer id) throws SQLException {
         String query = "{CALL obtener_metricauso(?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         cs.setInt(1, id);
         return cs; 
     }
 
     @Override
-    protected PreparedStatement getSelectAllPS(Connection conn) throws SQLException {
+    protected CallableStatement getSelectAllPS(Connection conn) throws SQLException {
         String query = "{CALL listar_metricauso()}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         return cs;  
     }
 

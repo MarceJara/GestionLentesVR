@@ -1,27 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/WebServices/WebService.java to edit this template
- */
 package com.pucp.gestionlentesvr.ws;
 
+import com.pucp.gestionlentesvr.dominio.Usuario.Grupo;
+import com.pucp.gestionlentesvr.dominio.Usuario.TipoActividad;
+import com.pucp.gestionlentesvr.dominio.Usuario.Usuario;
+import com.pucp.gestionlentesvr.dominio.dispositivos.Actividad;
+import com.pucp.gestionlentesvr.dominio.dispositivos.Dispositivo;
 import com.pucp.gestionlentesvr.negocio.ActividadService;
 import com.pucp.gestionlentesvr.negocioimpl.ActividadServiceImpl;
-import com.pucp.gestionlentesvr.dominio.Actividad;
 import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
+import java.sql.Date;
 import java.util.List;
-/**
- *
- * @author oscar
- */
+
 @WebService(serviceName = "ActividadWS", targetNamespace = "com.pucp.gestionlentesvr")
 public class ActividadWS {
 
-    private final ActividadService service;
+    private ActividadService service;
 
     public ActividadWS() {
-        this.service = new ActividadServiceImpl();
+        service = new ActividadServiceImpl();
     }
 
     @WebMethod(operationName = "registrarActividad")

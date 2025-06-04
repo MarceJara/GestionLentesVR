@@ -1,20 +1,21 @@
 package com.pucp.gestionlentesvr.persistencia.daoimpl;
 
-import com.pucp.gestionlentesvr.dominio.Firmware;
+import com.pucp.gestionlentesvr.dominio.dispositivos.Firmware;
 import com.pucp.gestionlentesvr.persistencia.BaseDAOImpl;
 import com.pucp.gestionlentesvr.persistencia.dao.FirmwareDAO;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 
 public class FirmwareDAOImpl extends BaseDAOImpl<Firmware> implements FirmwareDAO {
 
     @Override
-    protected PreparedStatement getInsertPS(Connection conn, Firmware entity) throws SQLException {
+    protected CallableStatement getInsertPS(Connection conn, Firmware entity) throws SQLException {
         String query = "{CALL insertar_firmware(?, ?, ?, ?,?, ?, ?, ?,?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
-        cs.setInt(1, entity.getFirmwareId());
+        CallableStatement cs = conn.prepareCall(query);
+        cs.registerOutParameter(1, Types.INTEGER);
         cs.setString(2, entity.getNombre());
         cs.setString(3, entity.getVersion());
         cs.setDate(4, new java.sql.Date(entity.getFechaLanzamiento().getTime()));
@@ -27,9 +28,9 @@ public class FirmwareDAOImpl extends BaseDAOImpl<Firmware> implements FirmwareDA
     }
 
     @Override
-    protected PreparedStatement getUpdatePS(Connection conn, Firmware entity) throws SQLException {
+    protected CallableStatement getUpdatePS(Connection conn, Firmware entity) throws SQLException {
        String query = "{CALL actualizar_firmware(?, ?, ?, ?,?, ?, ?, ?,?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         cs.setInt(1, entity.getFirmwareId());
         cs.setString(2, entity.getNombre());
         cs.setString(3, entity.getVersion());
@@ -47,25 +48,25 @@ public class FirmwareDAOImpl extends BaseDAOImpl<Firmware> implements FirmwareDA
     }
 
     @Override
-    protected PreparedStatement getDeletePS(Connection conn, Integer id) throws SQLException {
+    protected CallableStatement getDeletePS(Connection conn, Integer id) throws SQLException {
         String query = "{CALL eliminar_firmware(?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         cs.setInt(1, id);
         return cs;
     }
 
     @Override
-    protected PreparedStatement getSelectByIdPS(Connection conn, Integer id) throws SQLException {
+    protected CallableStatement getSelectByIdPS(Connection conn, Integer id) throws SQLException {
         String query = "{CALL obtener_firmware(?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         cs.setInt(1, id);
         return cs; 
     }
 
     @Override
-    protected PreparedStatement getSelectAllPS(Connection conn) throws SQLException {
+    protected CallableStatement getSelectAllPS(Connection conn) throws SQLException {
         String query = "{CALL listar_firmware()}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         return cs;  
     }
 
