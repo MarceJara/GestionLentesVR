@@ -1,16 +1,16 @@
-C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocio\ActividadService.java
-C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocio\AplicacionService.java
-C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocio\ConfiguracionService.java
-C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocio\DispositivoService.java
-C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocio\FirmwareService.java
-C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocio\GrupoService.java
-C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocio\RolService.java
-C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocio\UsuarioService.java
-C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocioimpl\ActividadServiceImpl.java
-C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocioimpl\AplicacionServiceImpl.java
-C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocioimpl\ConfiguracionServiceImpl.java
-C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocioimpl\DispositivoServiceImpl.java
-C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocioimpl\FirmwareServiceImpl.java
-C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocioimpl\GrupoServiceImpl.java
-C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocioimpl\RolServiceImpl.java
-C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocioimpl\UsuarioServiceImpl.java
+C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\LENTESVR\LENTESVR\Backend\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocio\ActividadService.java
+C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\LENTESVR\LENTESVR\Backend\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocio\AplicacionService.java
+C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\LENTESVR\LENTESVR\Backend\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocio\ConfiguracionService.java
+C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\LENTESVR\LENTESVR\Backend\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocio\DispositivoService.java
+C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\LENTESVR\LENTESVR\Backend\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocio\FirmwareService.java
+C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\LENTESVR\LENTESVR\Backend\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocio\GrupoService.java
+C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\LENTESVR\LENTESVR\Backend\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocio\RolService.java
+C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\LENTESVR\LENTESVR\Backend\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocio\UsuarioService.java
+C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\LENTESVR\LENTESVR\Backend\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocioimpl\ActividadServiceImpl.java
+C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\LENTESVR\LENTESVR\Backend\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocioimpl\AplicacionServiceImpl.java
+C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\LENTESVR\LENTESVR\Backend\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocioimpl\ConfiguracionServiceImpl.java
+C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\LENTESVR\LENTESVR\Backend\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocioimpl\DispositivoServiceImpl.java
+C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\LENTESVR\LENTESVR\Backend\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocioimpl\FirmwareServiceImpl.java
+C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\LENTESVR\LENTESVR\Backend\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocioimpl\GrupoServiceImpl.java
+C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\LENTESVR\LENTESVR\Backend\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocioimpl\RolServiceImpl.java
+C:\Users\HP\Desktop\Proyectos\Juegos Game Maker\LENTESVR\LENTESVR\Backend\GestionLentesVRNegocio\src\main\java\com\pucp\gestionlentesvr\negocioimpl\UsuarioServiceImpl.java

@@ -60,36 +60,36 @@ public class DispositivoServiceImpl implements DispositivoService {
 
     @Override
     public void actualizarDispositivo(Dispositivo elemento) throws Exception {
-        if (elemento.getNombre() == null || elemento.getNombre().trim().isEmpty()) {
-            throw new Exception("El nombre del dispositivo no puede estar vacío");
-        }
-        if (elemento.getModelo() == null || elemento.getModelo().trim().isEmpty()) {
-            throw new Exception("El modelo del dispositivo no puede estar vacío");
-        }
-        if (elemento.getNumeroSerie() == null || elemento.getNumeroSerie().trim().isEmpty()) {
-            throw new Exception("El número de serie del dispositivo no puede estar vacío");
-        }
-        if (elemento.getFechaRegistro() == null) {
-            throw new Exception("La fecha de registro no puede ser nula");
-        }
-        if (elemento.getUbicacion() == null || elemento.getUbicacion().trim().isEmpty()) {
-            throw new Exception("La ubicación del dispositivo no puede estar vacía");
-        }
-        if (elemento.getEstadoConexion() == null) {
-            throw new Exception("Debe especificarse el estado de conexión del dispositivo");
-        }
-        if (elemento.getNivelBateria() < 0 || elemento.getNivelBateria() > 100) {
-            throw new Exception("El nivel de batería debe estar entre 0 y 100");
-        }
-        if (elemento.getUltimaConexion() == null) {
-            throw new Exception("La fecha de última conexión no puede ser nula");
-        }
-        if (elemento.getFirmwareActual() == null) {
-            throw new Exception("Debe especificarse el firmware actual del dispositivo");
-        }
-        if (elemento.getGrupo() == null) {
-            throw new Exception("Debe asignarse el dispositivo a un grupo");
-        }
+//        if (elemento.getNombre() == null || elemento.getNombre().trim().isEmpty()) {
+//            throw new Exception("El nombre del dispositivo no puede estar vacío");
+//        }
+//        if (elemento.getModelo() == null || elemento.getModelo().trim().isEmpty()) {
+//            throw new Exception("El modelo del dispositivo no puede estar vacío");
+//        }
+//        if (elemento.getNumeroSerie() == null || elemento.getNumeroSerie().trim().isEmpty()) {
+//            throw new Exception("El número de serie del dispositivo no puede estar vacío");
+//        }
+//        if (elemento.getFechaRegistro() == null) {
+//            throw new Exception("La fecha de registro no puede ser nula");
+//        }
+//        if (elemento.getUbicacion() == null || elemento.getUbicacion().trim().isEmpty()) {
+//            throw new Exception("La ubicación del dispositivo no puede estar vacía");
+//        }
+//        if (elemento.getEstadoConexion() == null) {
+//            throw new Exception("Debe especificarse el estado de conexión del dispositivo");
+//        }
+//        if (elemento.getNivelBateria() < 0 || elemento.getNivelBateria() > 100) {
+//            throw new Exception("El nivel de batería debe estar entre 0 y 100");
+//        }
+//        if (elemento.getUltimaConexion() == null) {
+//            throw new Exception("La fecha de última conexión no puede ser nula");
+//        }
+//        if (elemento.getFirmwareActual() == null) {
+//            throw new Exception("Debe especificarse el firmware actual del dispositivo");
+//        }
+//        if (elemento.getGrupo() == null) {
+//            throw new Exception("Debe asignarse el dispositivo a un grupo");
+//        }
 
         dao.actualizar(elemento);
     }

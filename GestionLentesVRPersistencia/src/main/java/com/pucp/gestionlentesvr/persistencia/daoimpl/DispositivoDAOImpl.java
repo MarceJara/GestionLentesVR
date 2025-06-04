@@ -22,8 +22,9 @@ public class DispositivoDAOImpl extends BaseDAOImpl<Dispositivo> implements Disp
         cs.setDate(5, new java.sql.Date(entity.getFechaRegistro().getTime()));
         cs.setString(6, entity.getUbicacion());
         cs.setString(7, "S");
-        cs.setDate(8, new java.sql.Date(entity.getUltimaConexion().getTime()));
-        cs.setInt(9, entity.getGrupo().getGrupoId());
+        cs.setInt(8, entity.getNivelBateria());
+        cs.setDate(9, new java.sql.Date(entity.getUltimaConexion().getTime()));
+        cs.setInt(10, entity.getGrupo().getGrupoId());
         return cs;
     }
 
@@ -42,8 +43,9 @@ public class DispositivoDAOImpl extends BaseDAOImpl<Dispositivo> implements Disp
         }else{
             cs.setString(7, "N");
         }
-        cs.setDate(8, new java.sql.Date(entity.getUltimaConexion().getTime()));
-        cs.setInt(9, entity.getGrupo().getGrupoId());
+        cs.setInt(8, entity.getNivelBateria());
+        cs.setDate(9, new java.sql.Date(entity.getUltimaConexion().getTime()));
+        cs.setInt(10, entity.getGrupo().getGrupoId());
         return cs;
     }
 

@@ -65,7 +65,7 @@ public class AplicacionDAOImpl extends BaseDAOImpl<Aplicacion> implements Aplica
 
     @Override
     protected CallableStatement getSelectAllPS(Connection conn) throws SQLException {
-        String query = "{CALL listar_aplicacion()}";
+        String query = "{CALL listar_actividad()}";
         CallableStatement cs = conn.prepareCall(query);
         return cs;
     }
