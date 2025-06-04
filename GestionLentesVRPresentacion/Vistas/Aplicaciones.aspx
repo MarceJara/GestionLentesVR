@@ -29,9 +29,10 @@
             <asp:TemplateField HeaderText="Acción" ItemStyle-HorizontalAlign="Center">
                 <ItemTemplate>
                     <asp:LinkButton ID="lnkAccion" runat="server"
-                                    CommandName="ToggleInstall"
+                                    CommandName="EliminarApp"
+
                                     CommandArgument='<%# Eval("aplicacionId") %>'
-                                    Text='<%# ((bool)Eval("activo")) ? "Desinstalar" : "Instalar" %>'
+                                    Text="Eliminar"
                                     CssClass='<%# ((bool)Eval("activo")) ? "btn btn-danger btn-sm" : "btn btn-success btn-sm" %>' />
                 </ItemTemplate>
             </asp:TemplateField>
@@ -88,12 +89,12 @@
                                              CssClass="form-control bg-dark text-white border-secondary" />
                             </div>
                                            <div class="mb-3">
-                   <label for="txtFechaLanzamiento" class="form-label">Fecha de Lanzamiento</label>
-                   <asp:TextBox ID="txtFechaLanzamiento" runat="server"
-TextMode="Date"
-CssClass="form-control bg-dark text-white border-secondary" />
+                                               <label for="txtFechaLanzamiento" class="form-label">Fecha de Lanzamiento</label>
+                                               <asp:TextBox ID="txtFechaLanzamiento" runat="server"
+                                                    TextMode="Date"
+                                                    CssClass="form-control bg-dark text-white border-secondary" />
 
-               </div>
+                                           </div>
                             
 
                             <div class="mb-3">

@@ -99,18 +99,28 @@ namespace FrontVR.Vistas
         // ========= ACCIÓN INSTALAR/DESINSTALAR =========
         protected void gvAplicaciones_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName != "ToggleInstall") return;
-
             int id = Convert.ToInt32(e.CommandArgument);
-            var app = aplicacionWSClient.obtenerAplicacion(id);
-            if (app != null)
+
+            if (e.CommandName == "EliminarApp")
             {
-                app.activo = !app.activo;
-                aplicacionWSClient.actualizarAplicacion(app);
+                try
+                {
+                    aplicacionWSClient.eliminarAplicacion(id);
+                    System.Diagnostics.Debug.WriteLine($"[Eliminado] ID: {id}");
+                }
+                catch (System.Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine($"[Error al eliminar] {ex.Message}");
+                }
+
+                BindGrid();
+                return;
             }
 
-            BindGrid();
+            // Otras acciones (como ToggleInstall si decides mantenerlo)
         }
+
+
 
         protected string GetBadgeCss(object activoObj)
         {
