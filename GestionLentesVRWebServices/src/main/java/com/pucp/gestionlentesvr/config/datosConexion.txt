@@ -1,5 +1,0 @@
-hostname=dblabs.clcmykqu8lqs.us-east-1.rds.amazonaws.com
-user=admin
-password=FabianPracticas75.
-port=3306
-database=test
