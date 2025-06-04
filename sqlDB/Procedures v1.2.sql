@@ -240,7 +240,7 @@ END;
 //
 
 CREATE PROCEDURE eliminar_dispositivo(
-    IN p_dispositivoid INT, IN p_grupo_grupoid INT
+    IN p_dispositivoid INT
 )
 BEGIN
     UPDATE dispositivo 
@@ -457,7 +457,7 @@ END;
 //
 
 CREATE PROCEDURE eliminar_configuracion(
-    IN p_configuracionid INT, IN p_usuario_usuarioid INT
+    IN p_configuracionid INT
 )
 BEGIN
     UPDATE configuracion 
@@ -608,7 +608,7 @@ END;
 //
 
 CREATE PROCEDURE eliminar_metricauso(
-    IN p_metricaid INT, IN p_usuario_usuarioid INT
+    IN p_metricaid INT
 )
 BEGIN
     UPDATE metricauso 
