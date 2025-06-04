@@ -1,0 +1,130 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Administrador\\Documents\\Progra3\\TA PROGRA\\entrega 5\\LENTESVR\\Frontend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|FrontVR\\FrontVR.csproj|c:\\users\\administrador\\documents\\progra3\\ta progra\\entrega 5\\lentesvr\\frontend\\frontvr\\vistas\\dispositivos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|FrontVR\\FrontVR.csproj|solutionrelative:frontvr\\vistas\\dispositivos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|FrontVR\\FrontVR.csproj|C:\\Users\\Administrador\\Documents\\Progra3\\TA PROGRA\\entrega 5\\LENTESVR\\Frontend\\frontvr\\vistas\\dispositivos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|FrontVR\\FrontVR.csproj|solutionrelative:frontvr\\vistas\\dispositivos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|FrontVR\\FrontVR.csproj|c:\\users\\administrador\\documents\\progra3\\ta progra\\entrega 5\\lentesvr\\frontend\\frontvr\\vistas\\pantallainicio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|FrontVR\\FrontVR.csproj|solutionrelative:frontvr\\vistas\\pantallainicio.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|FrontVR\\FrontVR.csproj|C:\\Users\\Administrador\\Documents\\Progra3\\TA PROGRA\\entrega 5\\LENTESVR\\Frontend\\frontvr\\vistas\\pantallainicio.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|FrontVR\\FrontVR.csproj|solutionrelative:frontvr\\vistas\\pantallainicio.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|FrontVR\\FrontVR.csproj|C:\\Users\\Administrador\\Documents\\Progra3\\TA PROGRA\\entrega 5\\LENTESVR\\Frontend\\frontvr\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|FrontVR\\FrontVR.csproj|solutionrelative:frontvr\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|FrontVR\\FrontVR.csproj|C:\\Users\\Administrador\\Documents\\Progra3\\TA PROGRA\\entrega 5\\LENTESVR\\Frontend\\frontvr\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{3D9AB0C5-F57B-483A-9908-FDDACC94E4EF}|FrontVR\\FrontVR.csproj|solutionrelative:frontvr\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Dispositivos.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Documents\\Progra3\\TA PROGRA\\entrega 5\\LENTESVR\\Frontend\\FrontVR\\Vistas\\Dispositivos.aspx.cs",
+              "RelativeDocumentMoniker": "FrontVR\\Vistas\\Dispositivos.aspx.cs",
+              "ToolTip": "C:\\Users\\Administrador\\Documents\\Progra3\\TA PROGRA\\entrega 5\\LENTESVR\\Frontend\\FrontVR\\Vistas\\Dispositivos.aspx.cs",
+              "RelativeToolTip": "FrontVR\\Vistas\\Dispositivos.aspx.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAUwCkAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T00:00:14.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PantallaInicio.aspx",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Documents\\Progra3\\TA PROGRA\\entrega 5\\LENTESVR\\Frontend\\FrontVR\\Vistas\\PantallaInicio.aspx",
+              "RelativeDocumentMoniker": "FrontVR\\Vistas\\PantallaInicio.aspx",
+              "ToolTip": "C:\\Users\\Administrador\\Documents\\Progra3\\TA PROGRA\\entrega 5\\LENTESVR\\Frontend\\FrontVR\\Vistas\\PantallaInicio.aspx",
+              "RelativeToolTip": "FrontVR\\Vistas\\PantallaInicio.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-02T17:28:20.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dispositivos.aspx",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Documents\\Progra3\\TA PROGRA\\entrega 5\\LENTESVR\\Frontend\\FrontVR\\Vistas\\Dispositivos.aspx",
+              "RelativeDocumentMoniker": "FrontVR\\Vistas\\Dispositivos.aspx",
+              "ToolTip": "C:\\Users\\Administrador\\Documents\\Progra3\\TA PROGRA\\entrega 5\\LENTESVR\\Frontend\\FrontVR\\Vistas\\Dispositivos.aspx",
+              "RelativeToolTip": "FrontVR\\Vistas\\Dispositivos.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-02T17:23:34.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PantallaInicio.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Documents\\Progra3\\TA PROGRA\\entrega 5\\LENTESVR\\Frontend\\FrontVR\\Vistas\\PantallaInicio.aspx.cs",
+              "RelativeDocumentMoniker": "FrontVR\\Vistas\\PantallaInicio.aspx.cs",
+              "ToolTip": "C:\\Users\\Administrador\\Documents\\Progra3\\TA PROGRA\\entrega 5\\LENTESVR\\Frontend\\FrontVR\\Vistas\\PantallaInicio.aspx.cs",
+              "RelativeToolTip": "FrontVR\\Vistas\\PantallaInicio.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T17:20:18.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Default.aspx",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Documents\\Progra3\\TA PROGRA\\entrega 5\\LENTESVR\\Frontend\\FrontVR\\Default.aspx",
+              "RelativeDocumentMoniker": "FrontVR\\Default.aspx",
+              "ToolTip": "C:\\Users\\Administrador\\Documents\\Progra3\\TA PROGRA\\entrega 5\\LENTESVR\\Frontend\\FrontVR\\Default.aspx",
+              "RelativeToolTip": "FrontVR\\Default.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-02T17:12:05.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Site.Master",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Documents\\Progra3\\TA PROGRA\\entrega 5\\LENTESVR\\Frontend\\FrontVR\\Site.Master",
+              "RelativeDocumentMoniker": "FrontVR\\Site.Master",
+              "ToolTip": "C:\\Users\\Administrador\\Documents\\Progra3\\TA PROGRA\\entrega 5\\LENTESVR\\Frontend\\FrontVR\\Site.Master",
+              "RelativeToolTip": "FrontVR\\Site.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-06-02T17:09:39.727Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
