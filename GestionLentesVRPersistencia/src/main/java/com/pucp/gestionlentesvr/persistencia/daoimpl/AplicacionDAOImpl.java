@@ -1,19 +1,20 @@
 package com.pucp.gestionlentesvr.persistencia.daoimpl;
 
-import com.pucp.gestionlentesvr.dominio.Aplicacion;
+import com.pucp.gestionlentesvr.dominio.dispositivos.Aplicacion;
 import com.pucp.gestionlentesvr.persistencia.BaseDAOImpl;
 import com.pucp.gestionlentesvr.persistencia.dao.AplicacionDAO;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 
 public class AplicacionDAOImpl extends BaseDAOImpl<Aplicacion> implements AplicacionDAO {
 
     @Override
-    protected PreparedStatement getInsertPS(Connection conn, Aplicacion entity) throws SQLException {
+    protected CallableStatement getInsertPS(Connection conn, Aplicacion entity) throws SQLException {
         String query = "{CALL insertar_aplicacion(?, ?, ?, ?, ?, ?, ?, ?, ?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         cs.setInt(1, entity.getAplicacionId());
         cs.setString(2, entity.getNombre());
         cs.setString(3, entity.getVersion());
@@ -27,10 +28,10 @@ public class AplicacionDAOImpl extends BaseDAOImpl<Aplicacion> implements Aplica
     }
 
     @Override
-    protected PreparedStatement getUpdatePS(Connection conn, Aplicacion entity) throws SQLException {
+    protected CallableStatement getUpdatePS(Connection conn, Aplicacion entity) throws SQLException {
         String query = "{CALL actualizar_aplicacion(?, ?, ?, ?, ?, ?, ?, ?, ?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
-        cs.setInt(1, entity.getAplicacionId());
+        CallableStatement cs = conn.prepareCall(query);
+        cs.registerOutParameter(1, Types.INTEGER);
         cs.setString(2, entity.getNombre());
         cs.setString(3, entity.getVersion());
         cs.setString(4, entity.getDesarrollador());
@@ -47,25 +48,25 @@ public class AplicacionDAOImpl extends BaseDAOImpl<Aplicacion> implements Aplica
     }
 
     @Override
-    protected PreparedStatement getDeletePS(Connection conn, Integer id) throws SQLException {
+    protected CallableStatement getDeletePS(Connection conn, Integer id) throws SQLException {
         String query = "{CALL eliminar_aplicacion(?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         cs.setInt(1, id);
         return cs;
     }
 
     @Override
-    protected PreparedStatement getSelectByIdPS(Connection conn, Integer id) throws SQLException {
+    protected CallableStatement getSelectByIdPS(Connection conn, Integer id) throws SQLException {
         String query = "{CALL obtener_aplicacion(?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         cs.setInt(1, id);
         return cs; 
     }
 
     @Override
-    protected PreparedStatement getSelectAllPS(Connection conn) throws SQLException {
-        String query = "{CALL listar_actividad()}";
-        PreparedStatement cs = conn.prepareStatement(query);
+    protected CallableStatement getSelectAllPS(Connection conn) throws SQLException {
+        String query = "{CALL listar_aplicacion()}";
+        CallableStatement cs = conn.prepareCall(query);
         return cs;
     }
 

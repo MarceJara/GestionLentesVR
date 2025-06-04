@@ -9,7 +9,7 @@
     <artifactId>GestionLentesVRPersistencia</artifactId>
     <packaging>jar</packaging>
     <properties>
-        <maven.compiler.release>21</maven.compiler.release>
+        <maven.compiler.release>17</maven.compiler.release>
         <exec.mainClass>GestionLentesVRPersistencia</exec.mainClass>
     </properties>
     <dependencies>
@@ -17,11 +17,6 @@
         <groupId>mysql</groupId>
         <artifactId>mysql-connector-java</artifactId>
         <version>8.0.33</version>
-        </dependency>
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-            <version>6.3.0</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>

@@ -11,7 +11,13 @@ namespace FrontVR
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //LoginStatus1.Visible = Session["usuario"] != null;
+        }
 
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("~/Login.aspx");
         }
     }
 }

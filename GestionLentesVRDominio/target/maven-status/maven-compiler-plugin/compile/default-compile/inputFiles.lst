@@ -1,13 +1,13 @@
-C:\Users\oscar\Documents\25-1\PROGRAMACION 3\TA\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\Actividad.java
-C:\Users\oscar\Documents\25-1\PROGRAMACION 3\TA\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\Aplicacion.java
-C:\Users\oscar\Documents\25-1\PROGRAMACION 3\TA\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\CategoriaAplicacion.java
-C:\Users\oscar\Documents\25-1\PROGRAMACION 3\TA\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\Configuracion.java
-C:\Users\oscar\Documents\25-1\PROGRAMACION 3\TA\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\Dispositivo.java
-C:\Users\oscar\Documents\25-1\PROGRAMACION 3\TA\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\EstadoConexion.java
-C:\Users\oscar\Documents\25-1\PROGRAMACION 3\TA\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\Firmware.java
-C:\Users\oscar\Documents\25-1\PROGRAMACION 3\TA\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\Grupo.java
-C:\Users\oscar\Documents\25-1\PROGRAMACION 3\TA\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\MetricaUso.java
-C:\Users\oscar\Documents\25-1\PROGRAMACION 3\TA\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\Rol.java
-C:\Users\oscar\Documents\25-1\PROGRAMACION 3\TA\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\TipoActividad.java
-C:\Users\oscar\Documents\25-1\PROGRAMACION 3\TA\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\TipoConfiguracion.java
-C:\Users\oscar\Documents\25-1\PROGRAMACION 3\TA\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\Usuario.java
+C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\dispositivos\Actividad.java
+C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\dispositivos\Aplicacion.java
+C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\dispositivos\CategoriaAplicacion.java
+C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\dispositivos\Configuracion.java
+C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\dispositivos\Dispositivo.java
+C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\dispositivos\EstadoConexion.java
+C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\dispositivos\Firmware.java
+C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\dispositivos\TipoConfiguracion.java
+C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\Usuario\Grupo.java
+C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\Usuario\MetricaUso.java
+C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\Usuario\Rol.java
+C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\Usuario\TipoActividad.java
+C:\Marcelo\JavaProjects\GestionLentesVR\GestionLentesVRDominio\src\main\java\com\pucp\gestionlentesvr\dominio\Usuario\Usuario.java

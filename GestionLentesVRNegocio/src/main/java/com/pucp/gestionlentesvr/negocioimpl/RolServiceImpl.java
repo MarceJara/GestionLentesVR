@@ -4,7 +4,7 @@
  */
 package com.pucp.gestionlentesvr.negocioimpl;
 
-import com.pucp.gestionlentesvr.dominio.Rol;
+import com.pucp.gestionlentesvr.dominio.Usuario.Rol;
 import com.pucp.gestionlentesvr.negocio.RolService;
 import com.pucp.gestionlentesvr.persistencia.dao.RolDAO;
 import com.pucp.gestionlentesvr.persistencia.daoimpl.RolDAOImpl;

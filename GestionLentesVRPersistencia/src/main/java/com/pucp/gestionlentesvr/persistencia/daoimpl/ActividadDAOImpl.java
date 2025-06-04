@@ -1,20 +1,23 @@
 package com.pucp.gestionlentesvr.persistencia.daoimpl;
 
-import com.pucp.gestionlentesvr.dominio.Actividad;
+import com.pucp.gestionlentesvr.dominio.Usuario.Usuario;
+import com.pucp.gestionlentesvr.dominio.dispositivos.Actividad;
+import com.pucp.gestionlentesvr.dominio.dispositivos.Dispositivo;
 import com.pucp.gestionlentesvr.persistencia.BaseDAOImpl;
 import com.pucp.gestionlentesvr.persistencia.dao.ActividadDAO;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 
 public class ActividadDAOImpl extends BaseDAOImpl<Actividad> implements ActividadDAO {
 
     @Override
-    protected PreparedStatement getInsertPS(Connection conn, Actividad entity) throws SQLException {
+    protected CallableStatement getInsertPS(Connection conn, Actividad entity) throws SQLException {
         String query = "{CALL insertar_actividad(?, ?, ?, ?, ?, ?, ?, ?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
-        cs.setInt(1, entity.getActividadId());
+        CallableStatement cs = conn.prepareCall(query);
+        cs.registerOutParameter(1, Types.INTEGER);
         cs.setDate(2, new java.sql.Date(entity.getFechaHora().getTime()));
         cs.setString(3, entity.getDescripcion());
         cs.setString(4, entity.getDetallesTecnicos());
@@ -26,9 +29,9 @@ public class ActividadDAOImpl extends BaseDAOImpl<Actividad> implements Activida
     }
 
     @Override
-    protected PreparedStatement getUpdatePS(Connection conn, Actividad entity) throws SQLException {
+    protected CallableStatement getUpdatePS(Connection conn, Actividad entity) throws SQLException {
         String query = "{CALL actualizar_actividad(?, ?, ?, ?, ?, ?, ?, ?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         cs.setInt(1, entity.getActividadId());
         cs.setDate(2, new java.sql.Date(entity.getFechaHora().getTime()));
         cs.setString(3, entity.getDescripcion());
@@ -45,25 +48,25 @@ public class ActividadDAOImpl extends BaseDAOImpl<Actividad> implements Activida
     }
 
     @Override
-    protected PreparedStatement getDeletePS(Connection conn, Integer id) throws SQLException {
+    protected CallableStatement getDeletePS(Connection conn, Integer id) throws SQLException {
         String query = "{CALL eliminar_actividad(?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         cs.setInt(1, id);
         return cs;
     }
 
     @Override
-    protected PreparedStatement getSelectByIdPS(Connection conn, Integer id) throws SQLException {
+    protected CallableStatement getSelectByIdPS(Connection conn, Integer id) throws SQLException {
         String query = "{CALL obtener_actividad(?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         cs.setInt(1, id);
         return cs; 
     }
 
     @Override
-    protected PreparedStatement getSelectAllPS(Connection conn) throws SQLException {
+    protected CallableStatement getSelectAllPS(Connection conn) throws SQLException {
         String query = "{CALL listar_actividad()}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         return cs;  
     }
 
@@ -74,9 +77,11 @@ public class ActividadDAOImpl extends BaseDAOImpl<Actividad> implements Activida
         act.setFechaHora(rs.getDate("fechahora"));
         act.setDescripcion(rs.getString("descripcion"));
         act.setDetallesTecnicos(rs.getString("detallestecnicos"));
-        act.getUsuario().setUsuarioId(rs.getInt("usuario_usuarioid"));
-        act.getDispositivoAfectado().setDispositivoId(rs.getInt("dispositivo_dispositivoid"));
-        act.getDispositivoAfectado().getGrupo().setGrupoId(rs.getInt("dispositivo_grupo_grupoid"));
+        Usuario user = act.getUsuario();
+        user.setUsuarioId(rs.getInt("usuario_usuarioid"));
+        Dispositivo dis= act.getDispositivoAfectado();
+        dis.setDispositivoId(rs.getInt("dispositivo_dispositivoid"));
+        dis.getGrupo().setGrupoId(rs.getInt("dispositivo_grupo_grupoid"));
         if(rs.getString("activo").compareTo("S")==0){
             act.setActivo(true);
         }else{

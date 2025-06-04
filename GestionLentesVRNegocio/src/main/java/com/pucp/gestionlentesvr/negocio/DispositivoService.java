@@ -4,7 +4,7 @@
  */
 package com.pucp.gestionlentesvr.negocio;
 
-import com.pucp.gestionlentesvr.dominio.Dispositivo;
+import com.pucp.gestionlentesvr.dominio.dispositivos.Dispositivo;
 import java.util.List;
 
 /**

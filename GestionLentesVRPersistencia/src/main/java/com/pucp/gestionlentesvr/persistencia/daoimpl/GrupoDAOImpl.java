@@ -1,20 +1,21 @@
 package com.pucp.gestionlentesvr.persistencia.daoimpl;
 
-import com.pucp.gestionlentesvr.dominio.Grupo;
+import com.pucp.gestionlentesvr.dominio.Usuario.Grupo;
 import com.pucp.gestionlentesvr.persistencia.BaseDAOImpl;
 import com.pucp.gestionlentesvr.persistencia.dao.GrupoDAO;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 
 public class GrupoDAOImpl extends BaseDAOImpl<Grupo> implements GrupoDAO {
 
     @Override
-    protected PreparedStatement getInsertPS(Connection conn, Grupo entity) throws SQLException {
+    protected CallableStatement getInsertPS(Connection conn, Grupo entity) throws SQLException {
         String query = "{CALL insertar_grupo(?, ?, ?, ?, ?, ?, ?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
-        cs.setInt(1, entity.getGrupoId());
+        CallableStatement cs = conn.prepareCall(query);
+        cs.registerOutParameter(1, Types.INTEGER);
         cs.setString(2, entity.getNombre());
         cs.setString(3, entity.getDescripcion());
         cs.setDate(4, new java.sql.Date(entity.getFechaCreacion().getTime()));
@@ -25,9 +26,9 @@ public class GrupoDAOImpl extends BaseDAOImpl<Grupo> implements GrupoDAO {
     }
 
     @Override
-    protected PreparedStatement getUpdatePS(Connection conn, Grupo entity) throws SQLException {
+    protected CallableStatement getUpdatePS(Connection conn, Grupo entity) throws SQLException {
         String query = "{CALL actualizar_grupo(?, ?, ?, ?, ?, ?, ?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         cs.setInt(1, entity.getGrupoId());
         cs.setString(2, entity.getNombre());
         cs.setString(3, entity.getDescripcion());
@@ -43,25 +44,25 @@ public class GrupoDAOImpl extends BaseDAOImpl<Grupo> implements GrupoDAO {
     }
 
     @Override
-    protected PreparedStatement getDeletePS(Connection conn, Integer id) throws SQLException {
+    protected CallableStatement getDeletePS(Connection conn, Integer id) throws SQLException {
         String query = "{CALL eliminar_grupo(?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         cs.setInt(1, id);
         return cs;
     }
 
     @Override
-    protected PreparedStatement getSelectByIdPS(Connection conn, Integer id) throws SQLException {
+    protected CallableStatement getSelectByIdPS(Connection conn, Integer id) throws SQLException {
         String query = "{CALL obtener_grupo(?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         cs.setInt(1, id);
         return cs;
     }
 
     @Override
-    protected PreparedStatement getSelectAllPS(Connection conn) throws SQLException {
+    protected CallableStatement getSelectAllPS(Connection conn) throws SQLException {
         String query = "{CALL listar_grupo(?)}";
-        PreparedStatement cs = conn.prepareStatement(query);
+        CallableStatement cs = conn.prepareCall(query);
         return cs;
     }
 

@@ -73,6 +73,13 @@
                 <a href="Actividades.aspx"><i class="fas fa-tasks"></i> Actividades</a>
                 <a href="Administracion.aspx"><i class="fas fa-user-shield"></i> Administración</a>
                 <a href="Configuraciones.aspx"><i class="fas fa-cog"></i> Configuraciones</a>
+
+                <asp:LinkButton ID="btnLogout" runat="server" CssClass="sidebar-link"
+                    OnClick="btnLogout_Click" CausesValidation="False">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+                </asp:LinkButton>
+
+
             </div>
             <div class="main-content">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server" />
